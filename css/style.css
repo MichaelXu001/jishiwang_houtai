@@ -945,6 +945,7 @@ img.authenticationLogo {
 .innerLogin .operationPwd label {
     display: inline;
     float: left;
+    cursor: pointer;
 }
 
 .innerLogin .operationPwd input {

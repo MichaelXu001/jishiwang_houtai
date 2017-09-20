@@ -31,7 +31,7 @@ function Common() {
         },
         this.setCookie = function(name, value, days) {
             var date = new Date().getTime();
-            days ? days : 30;
+            days ? days : 7;
             date += days * 24 * 60 * 60 * 1000;
             document.cookie = name + "=" + escape(value) + ";path=/;expires=" + new Date(date).toUTCString();
         },
@@ -40,10 +40,8 @@ function Common() {
             if (arr != null) return unescape(arr[2]);
             return "";
         },
-
         this.removeCookie = function(name) {
-            var date = new Date().getTime() - 1;
-            document.cookie = name + "=" + escape(name) + ";expires=" + new Date(date).toUTCString();
+            common.setCookie(name, 1, -1);
         }
 }
 common = new Common();
