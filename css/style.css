@@ -1,0 +1,992 @@
+.nav {
+    width: 100%;
+    height: 54px;
+    margin: 0 auto;
+    background-image: linear-gradient(-90deg, #FEAC5E 0%, #FF8A38 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 12;
+    min-width: 1218px;
+    width: 100% !important;
+}
+
+.leftgroup {
+    float: left;
+    width: 200px;
+    height: 54px;
+}
+
+.logo {
+    float: left;
+    width: 146px;
+    height: 54px;
+    -webkit-transition: all 0.5s linear;
+}
+
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(./../images/logo.png) center center no-repeat;
+}
+
+.telescopic {
+    float: left;
+    width: 54px;
+    height: 54px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.telescopic img {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 19px auto;
+}
+
+.shrink img {
+    -webkit-transform: rotate(-90deg);
+}
+
+.rightgroup {
+    float: right;
+}
+
+.rightgroup ul {
+    float: right;
+    line-height: 54px;
+}
+
+.rightgroup ul li {
+    float: left;
+}
+
+.rightgroup ul li a {
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: 200;
+    padding: 0 14px;
+}
+
+.rightgroup ul li.quit a {
+    border-left: solid 1px #fff;
+}
+
+.namePic {
+    float: right;
+    width: 30px;
+    height: 30px;
+    margin-top: 12px;
+    background: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.namePic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    float: left;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 54px;
+    min-width: 1218px;
+    width: 100% !important;
+    overflow: visible;
+}
+
+.leftMenu {
+    width: 200px;
+    height: 100%;
+    background: #384044;
+    float: left;
+    margin-left: -100%;
+    overflow-y: auto;
+    -webkit-transition: all 0.5s linear;
+    position: relative;
+    z-index: 10;
+    overflow-x: hidden;
+}
+
+.leftMenu ul {
+    min-height: 410px;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    float: left;
+    height: 100%;
+    background: #f6f6f6;
+}
+
+.rightMain {
+    padding-left: 220px;
+    overflow: auto;
+    -webkit-transition: all 0.5s linear;
+    height: 100%;
+}
+
+.shrinkrightMain {
+    padding-left: 70px;
+}
+
+.leftMenu li {
+    height: 60px;
+    line-height: 60px;
+    font-weight: 200;
+    line-height: 60px;
+    overflow: hidden;
+}
+
+.leftMenu li a {
+    float: left;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: 200;
+    -webkit-transition: all 0.5s linear;
+}
+
+.leftMenu li span {
+    display: block;
+    float: left;
+    width: 17px;
+    height: 17px;
+    margin: 21px 18px;
+}
+
+.leftMenu li span img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.shrinkMenu {
+    width: 54px;
+    overflow: hidden;
+}
+
+.shrinklogo {
+    width: 0;
+    overflow: hidden;
+}
+
+.leftMenu li.active {
+    background: #444D52;
+}
+
+.essentialInfo {
+    margin: 20px 20px 0 0;
+    height: 120px;
+}
+
+.company {
+    width: 65%;
+    float: left;
+    background: #fff;
+    height: 120px;
+}
+
+.advertisementImg {
+    width: 33%;
+    float: right;
+    height: 120px;
+}
+
+.advertisementImg a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.advertisementImg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.headImg {
+    float: left;
+    margin: 30px 0 0 30px;
+    display: inline;
+}
+
+.headPortrait {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    padding-left: 20px;
+    position: relative;
+}
+
+.headPortrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+img.authenticationLogo {
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.companyName {
+    float: left;
+    padding-left: 15px;
+}
+
+.companyName .name {
+    font-size: 16px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 2;
+    padding-top: 2px;
+}
+
+.companyName .Authentication {
+    width: 72px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: rgba(255, 95, 90, 0.10);
+    border-radius: 10px;
+    font-size: 12px;
+    color: #FF5F5A;
+    letter-spacing: 0;
+}
+
+.orderInfor {
+    float: right;
+}
+
+.orderInfor dl {
+    float: left;
+    text-align: center;
+    padding-right: 43px;
+}
+
+.orderInfor dl dt {
+    font-size: 18px;
+    color: #FF8A38;
+    letter-spacing: 0;
+    line-height: 50px;
+    padding-top: 20px;
+}
+
+.orderInfor dl dd {
+    font-size: 12px;
+    color: #666666;
+    letter-spacing: 0;
+    font-weight: 200;
+}
+
+.myCollections,
+.myOrders,
+.unconfirmedOrder {
+    margin: 20px 20px 0 0;
+    background: #fff;
+    padding-bottom: 20px;
+}
+
+.tit {
+    height: 55px;
+    margin: 0 20px;
+    line-height: 55px;
+}
+
+.tit h3 {
+    font-size: 16px;
+    color: #333333;
+    letter-spacing: 1px;
+}
+
+.tit p a {
+    font-size: 12px;
+    color: #666666;
+    letter-spacing: 0;
+}
+
+.everyList {
+    border: 1px solid #DDDDDD;
+    margin: 0 20px 0 20px;
+    border-bottom: none;
+}
+
+.topInfor {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #F5F5F5;
+    border-bottom: 1px solid #DDDDDD;
+    /* overflow: hidden;
+   white-space: nowrap;
+    text-overflow: ellipsis; */
+}
+
+.firstInfor {
+    font-size: 12px;
+    color: #999999;
+}
+
+.times {
+    padding-left: 20px;
+}
+
+.orderId {
+    padding-left: 50px;
+}
+
+.orderId span {
+    color: #151515;
+}
+
+.brandName {
+    padding-left: 90px;
+    background: url("./../images/company.png") 67px center no-repeat;
+}
+
+.secondInfor {
+    font-size: 12px;
+    color: #333333;
+    padding-right: 20px;
+}
+
+.secondInfor span {
+    color: #2A2A2A;
+}
+
+.goodsInfor {
+    height: 120px;
+    line-height: 120px;
+    font-size: 12px;
+    color: #333333;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.goodsInfor div {
+    width: 17%;
+    text-align: center;
+}
+
+.goodsInfor div.goodsImg {
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+}
+
+.goodsName {}
+
+.goodsImg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.goodsBtn p {
+    width: 56px;
+    height: 30px;
+    margin: 45px auto 0 auto;
+    background-image: linear-gradient(-90deg, #FEAC5E 0%, #FF8A38 100%);
+    border-radius: 16px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.comment {
+    line-height: 40px;
+    font-size: 12px;
+    color: #333333;
+    padding: 0 20px;
+    border-bottom: solid 1px #ddd;
+}
+
+.comment span {
+    color: #666666;
+    padding-left: 10px;
+}
+
+.everyCollection {
+    width: 14%;
+    height: 200px;
+    border: 1px solid #DDDDDD;
+    margin-left: 20px;
+    float: left;
+}
+
+.everyCollection:hover {
+    box-shadow: 0 0 10px 0 rgba(108, 108, 108, 0.50);
+}
+
+.imgBox {
+    height: 150px;
+}
+
+.imgBox img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.imgBox .shop {
+    height: 0;
+    text-align: center;
+    /* margin-top: -30px; */
+    line-height: 30px;
+    position: relative;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+    letter-spacing: 0;
+    font-weight: 100;
+    color: #FFFFFF;
+    overflow: hidden;
+}
+
+.imgBox a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.DeviceName {
+    font-size: 12px;
+    color: #333333;
+    padding: 0 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 25px;
+}
+
+.priceBox {
+    padding: 0 5px;
+    line-height: 25px;
+    height: 25px;
+}
+
+.price {
+    font-size: 16px;
+    color: #FF001F;
+}
+
+.priceType {
+    color: #3f3f3f;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.projectType {
+    height: 54px;
+}
+
+.projectType ul {
+    float: left;
+}
+
+.projectType ul li {
+    float: left;
+    margin-right: 20px;
+    font-size: 16px;
+    color: #666666;
+    letter-spacing: 0;
+    padding-top: 15px;
+    line-height: 2;
+    cursor: pointer;
+}
+
+.projectType ul li.active {
+    color: #FF8A38;
+    border-bottom: solid 2px #FF8A38;
+}
+
+.searchBox {
+    width: 200px;
+    margin-top: 20px;
+    float: right;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.searchBox .searchBtn {
+    float: left;
+    width: 30px;
+    height: 30px;
+    background: url("./../images/searchBtn.png") center center no-repeat;
+    background-size: 20px 20px;
+    cursor: pointer;
+}
+
+.searchInput {
+    display: block;
+    float: left;
+    width: 170px;
+    height: 30px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #999999;
+    letter-spacing: 0;
+}
+
+.orderType {
+    height: 70px;
+    background: #fff;
+    margin-top: 20px;
+}
+
+.orderType li {
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #DDDDDD;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #999999;
+    letter-spacing: 0;
+    float: left;
+    margin: 20px 0 0 15px;
+    padding: 0 10px;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.orderType li.active {
+    padding: 1px 11px;
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(-90deg, #FEAC5E 0%, #FF8A38 100%);
+}
+
+.OrderList {
+    background: #fff;
+    padding-bottom: 20px;
+}
+
+.OrderList .everyList {
+    margin-bottom: 20px;
+}
+
+.settingMain {
+    width: 100%;
+    background: #fff;
+}
+
+.reviseinfor {
+    border-bottom: solid #eee 1px;
+    margin: 0 20px;
+    font-size: 12px;
+    color: #666666;
+    letter-spacing: 0.75px;
+    padding-bottom: 20px;
+}
+
+.reviseinfor p {
+    float: left;
+    font-weight: 200;
+    padding-right: 20px;
+    padding-top: 28px;
+}
+
+.adress,
+.oldNum {
+    float: left;
+    font-size: 12px;
+    color: #333333;
+    padding-top: 28px;
+    letter-spacing: 0.75px;
+    margin-right: 20px;
+}
+
+.revisePwdBtn {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    background: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 21px;
+    cursor: pointer;
+}
+
+.inputBox {
+    margin-top: 5px;
+    float: left;
+}
+
+.inputBox li {
+    height: 30px;
+    margin-top: 15px;
+}
+
+.inputBox li input {
+    display: block;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    width: 210px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    float: left;
+}
+
+.inputBox li div {
+    background: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    float: left;
+    height: 30px;
+    width: 54px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    color: #666666;
+    letter-spacing: 0.75px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.inputBox li div.codeBtn {
+    height: 30px;
+    width: 82px;
+    text-align: center;
+    line-height: 30px;
+    background: #F5F5F5;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #999999;
+    float: left;
+    margin-left: 20px;
+}
+
+.qualifications {
+    float: left;
+    margin-top: 20px;
+}
+
+.uploadImg {
+    width: 80px;
+    height: 80px;
+    float: left;
+    background: rgba(0, 0, 0, 0.50);
+    border-radius: 5px;
+}
+
+.uploadImg #uploadImg {
+    display: none;
+}
+
+.revisePic p {
+    padding-top: 50px;
+}
+
+.uploadImg label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("./../images/upload.png") no-repeat center center;
+    cursor: pointer;
+}
+
+.enterpriseInforBox,
+.securityBox {
+    padding-bottom: 20px;
+}
+
+.warning {
+    float: left;
+    font-size: 12px;
+    color: #FF5F5A;
+    letter-spacing: 0.75px;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+.qualificationsImg {
+    width: 80px;
+    height: 80px;
+    float: left;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.qualificationsImg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.qualificationsImg .closeImg {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url("./../images/close.png") no-repeat;
+}
+
+.qualificationsBigImg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+.qualificationsBigImg .BigImg {
+    width: 60%;
+    margin: 150px auto 0 auto;
+}
+
+.BigImg img {
+    display: block;
+    width: 100%;
+}
+
+.closeBigImg {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.closeBigImg img {
+    display: block;
+    width: 100%;
+}
+
+.userName {
+    float: left;
+    font-size: 16px;
+    color: #333333;
+    padding-top: 26px;
+    letter-spacing: 0.75px;
+    margin-right: 20px;
+}
+
+.closeAdress {
+    float: left;
+    width: 12px;
+    height: 12px;
+    background: url("./../images/icon_close.png") no-repeat;
+    background-size: 100%;
+    margin-top: 15px;
+}
+
+.evaryAdress {
+    height: 40px;
+    line-height: 40px;
+}
+
+.evaryAdress p {
+    padding-top: 0;
+}
+
+.evaryAdress .adress {
+    padding-top: 0;
+}
+
+.addAdress {
+    padding-bottom: 0;
+}
+
+.addAdress p {
+    height: 40px;
+    width: 71px;
+}
+
+.addAdressgroup {
+    margin: 10px 0 20px 80px;
+}
+
+.addAdressgroup select {
+    padding: 0 5px;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 30px;
+}
+
+.selects {
+    width: 80px;
+    height: 30px;
+    overflow: hidden;
+    float: left;
+    background: url("./../images/arrow.png") no-repeat 60px center;
+    margin-right: 20px;
+}
+
+.addAdressgroup select {
+    width: 80px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: solid #ddd 1px;
+    font-size: 12px;
+    color: #999999;
+    letter-spacing: 0;
+    line-height: 30px;
+}
+
+.addAdressgroup .inputBox li,
+.addAdressgroup .inputBox {
+    margin-top: 0;
+}
+
+.loginNav ul li a {
+    border-left: solid 1px #fff;
+}
+
+.loginNav ul li a.loginA {
+    border-left: none;
+}
+
+.loginMain {
+    width: 840px;
+    height: 500px;
+    background: #FFFFFF;
+    box-shadow: 0 0 10px 0 rgba(107, 107, 107, 0.50);
+    margin: 60px auto 0 auto;
+}
+
+.loginImg {
+    float: left;
+    width: 300px;
+    height: 500px;
+}
+
+.loginImg a {
+    width: 300px;
+    height: 500px;
+}
+
+.loginImg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.loginBox {
+    float: left;
+    width: 540px;
+    height: 500px;
+}
+
+.innerLogin {
+    width: 340px;
+    margin: 60px auto 0 auto;
+}
+
+.innerLogin h3 {
+    font-size: 24px;
+    color: #FF8A38;
+    letter-spacing: 1.5px;
+}
+
+.row {
+    height: 44px;
+    line-height: 44px;
+    margin-top: 15px;
+}
+
+.innerLogin input {
+    display: block;
+    width: 330px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #999999;
+    letter-spacing: 0;
+    padding-left: 10px;
+}
+
+.operationPwd {
+    margin-top: 15px;
+    line-height: 1;
+}
+
+.innerLogin .operationPwd input,
+.innerLogin .operationPwd label {
+    display: inline;
+    float: left;
+}
+
+.innerLogin .operationPwd input {
+    width: auto;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.innerLogin .operationPwd label {
+    font-size: 12px;
+    color: #666666;
+    letter-spacing: 0;
+}
+
+.operationPwd a {
+    float: right;
+    font-size: 12px;
+    color: #666666;
+}
+
+input.loginBtn {
+    background-image: linear-gradient(-90deg, #FEAC5E 0%, #FF8A38 100%);
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 44px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.registerBtn {
+    background: #FFFFFF;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #FF8A38;
+    text-align: center;
+    line-height: 44px;
+    border: 1px solid #FF8A38;
+}
+
+.registerBtn a {
+    display: block;
+    width: 100%;
+    color: #FF8A38;
+}
