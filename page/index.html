@@ -14,16 +14,18 @@
         <div class="logo" id="logo">
             <a href="./index.html"></a>
         </div>
-        <div class="telescopic shrink" id="telescopic"><img src="./../images/zd.png" alt=""></div>
+        <div class="telescopic shrink" id="telescopic"><img src="./../images/zd2.png" alt=""></div>
     </div>
     <div class="rightgroup">
         <ul>
-            <li class="name"><a href="">旭阳科技</a></li>
+            <li class="name">
+                <a href=""></a>
+            </li>
             <li class="intentionOrder"><a href="">意向单</a></li>
             <li class="legalService"><a href="">法律服务</a></li>
-            <li class="quit"><a href="">退出</a></li>
+            <li class="quit" id="quit"><a href="javascript:void(0);">退出</a></li>
         </ul>
-        <div class="namePic"><img src="./../images/1.jpg" alt=""></div>
+        <div class="namePic"><img alt=""></div>
     </div>
 </div>
 <div class="main">
@@ -32,42 +34,44 @@
             <div class="essentialInfo">
                 <div class="company">
                     <div class="headImg">
-                        <div class="headPortrait ">
-                            <img src="./../images/1.jpg" alt="">
-                            <img src="./../images/vip.png" alt="" class="authenticationLogo">
+                        <div class="headPortrait">
+                            <img src="" id="headerImg" alt="">
+                            <img src="./../images/vip.png" id="vip" alt="" class="authenticationLogo">
                         </div>
                         <div class="companyName">
-                            <div class="name">旭阳科技</div>
-                            <div class="Authentication">实名认证</div>
+                            <div class="name">
+                                <a href=""></a>
+                            </div>
+                            <div class="Authentication" id="Authentication"></div>
                         </div>
                     </div>
-                    <div class="orderInfor">
+                    <div class="orderInfor" id="orderInfor">
                         <dl>
-                            <dt>2</dt>
+                            <dt><a href="my_intention_order.html?type=000&status=3" id="whloe"></a></dt>
                             <dd>全部意向单</dd>
                         </dl>
                         <dl>
-                            <dt>12</dt>
-                            <dd>新增意向单</dd>
+                            <dt><a href="my_intention_order.html?type=000&status=2" id="newly"></a></dt>
+                            <dd>确认意向单</dd>
                         </dl>
                         <dl>
-                            <dt>9</dt>
+                            <dt><a href="my_intention_order.html?type=000&status=1" id="confirmed"></a></dt>
                             <dd>未确认意向单</dd>
                         </dl>
                     </div>
                 </div>
 
-                <div class="advertisementImg">
-                    <a href="#"><img src="./../images/concat.jpg" alt=""></a>
+                <div class="advertisementImg" id="advertisementImg">
+                    <a href=""><img alt=""></a>
                 </div>
             </div>
-            <div class="unconfirmedOrder">
+            <div class="unconfirmedOrder" id="unconfirmedOrder">
                 <div class="tit">
                     <h3 class="fl">未确认意向单</h3>
-                    <p class="fr"><a href="#">查看全部订单</a></p>
+                    <p class="fr"><a href="./my_intention_order.html?type=000&status=3">查看全部订单</a></p>
                 </div>
                 <div class="clear"></div>
-                <div class="everyList">
+                <!-- <div class="everyList">
                     <div class="topInfor">
                         <div class="firstInfor fl">
                             <div class="times fl">2017-08-24 12:00:00</div>
@@ -82,20 +86,21 @@
                         <div class="goodsImg fl"><img src="./../images/1.jpg" alt=""></div>
                         <div class="goodsName fl">YTG786大汽车</div>
                         <div class="goodsModel fl">AXCDS210</div>
-                        <div class="goodsNumber fl">*2</div>
+                        <div class="goodsNumber fl">×2</div>
                         <div class="goodsPrice fl">¥1234500</div>
                         <div class="goodsBtn fl">
                             <p>确认</p>
+                            <span>已确认:201231332</span>
                         </div>
                     </div>
                     <div class="comment">留言： <span>q2发广告那个你噶刚发广告刚刚发给q2发广</span></div>
-                </div>
+                </div> -->
 
             </div>
             <div class="myOrders">
                 <div class="tit">
                     <h3 class="fl">我的订单</h3>
-                    <p class="fr"><a href="#">查看全部订单</a></p>
+                    <p class="fr"><a href="./my_order.html">查看全部订单</a></p>
                 </div>
                 <div class="clear"></div>
                 <div class="everyList">
@@ -113,7 +118,7 @@
                         <div class="goodsImg fl"><img src="./../images/1.jpg" alt=""></div>
                         <div class="goodsName fl">YTG786小汽车</div>
                         <div class="goodsModel fl">AXCDS210</div>
-                        <div class="goodsNumber fl">*4</div>
+                        <div class="goodsNumber fl">×4</div>
                         <div class="goodsPrice fl">¥8884500</div>
                         <div class="goodsBtn fl">
                         </div>
@@ -125,11 +130,11 @@
             <div class="myCollections">
                 <div class="tit">
                     <h3 class="fl">我的收藏</h3>
-                    <p class="fr"><a href="#">查看全部收藏</a></p>
+                    <p class="fr"><a href="./my_collection.html?type=000">查看全部收藏</a></p>
                 </div>
                 <div class="clear"></div>
                 <div class="CollectionBox" id="CollectionBox">
-                    <div class="everyCollection">
+                    <!-- <div class="everyCollection">
                         <div class="imgBox">
                             <a href="">
                                 <img src="./../images/123.png" alt="">
@@ -141,72 +146,7 @@
                             <div class="price fl">¥123400</div>
                             <div class="priceType fl">参考价</div>
                         </div>
-                    </div>
-                    <div class="everyCollection">
-                        <div class="imgBox">
-                            <a href="">
-                                <img src="./../images/123.png" alt="">
-                                <div class="shop">进入店铺</div>
-                            </a>
-                        </div>
-                        <div class="DeviceName">PowerROC D45潜孔式挖掘机</div>
-                        <div class="priceBox">
-                            <div class="price fl">¥123400</div>
-                            <div class="priceType fl">参考价</div>
-                        </div>
-                    </div>
-                    <div class="everyCollection">
-                        <div class="imgBox">
-                            <a href="">
-                                <img src="./../images/123.png" alt="">
-                                <div class="shop">进入店铺</div>
-                            </a>
-                        </div>
-                        <div class="DeviceName">PowerROC D45潜孔式挖掘机</div>
-                        <div class="priceBox">
-                            <div class="price fl">¥123400</div>
-                            <div class="priceType fl">参考价</div>
-                        </div>
-                    </div>
-                    <div class="everyCollection">
-                        <div class="imgBox">
-                            <a href="">
-                                <img src="./../images/123.png" alt="">
-                                <div class="shop">进入店铺</div>
-                            </a>
-                        </div>
-                        <div class="DeviceName">PowerROC D45潜孔式挖掘机</div>
-                        <div class="priceBox">
-                            <div class="price fl">¥123400</div>
-                            <div class="priceType fl">参考价</div>
-                        </div>
-                    </div>
-                    <div class="everyCollection">
-                        <div class="imgBox">
-                            <a href="">
-                                <img src="./../images/123.png" alt="">
-                                <div class="shop">进入店铺</div>
-                            </a>
-                        </div>
-                        <div class="DeviceName">PowerROC D45潜孔式挖掘机</div>
-                        <div class="priceBox">
-                            <div class="price fl">¥123400</div>
-                            <div class="priceType fl">参考价</div>
-                        </div>
-                    </div>
-                    <div class="everyCollection">
-                        <div class="imgBox">
-                            <a href="">
-                                <img src="./../images/123.png" alt="">
-                                <div class="shop">进入店铺</div>
-                            </a>
-                        </div>
-                        <div class="DeviceName">PowerROC D45潜孔式挖掘机</div>
-                        <div class="priceBox">
-                            <div class="price fl">¥123400</div>
-                            <div class="priceType fl">参考价</div>
-                        </div>
-                    </div>
+                    </div> -->
                     <div class="clear"></div>
 
                 </div>
@@ -222,19 +162,19 @@
             </li>
             <li class="myIntentionOrder">
                 <span><img src="./../images/IntentionOrder.png" alt=""></span>
-                <a href="./myIntentionOrder.html">我的意向单</a>
+                <a href="./my_intention_order.html?type=000&status=3">我的意向单</a>
             </li>
             <li class="myOrder">
                 <span><img src="./../images/order.png" alt=""></span>
-                <a href="./myOrder.html">我的订单</a>
+                <a href="./my_order.html">我的订单</a>
             </li>
             <li class="myShoppingCart">
                 <span><img src="./../images/ShoppingCart.png" alt=""></span>
-                <a href="./myShoppingCart.html">我的购物车</a>
+                <a href="./my_shopping_cart.html">我的购物车</a>
             </li>
             <li class="myCollection">
                 <span><img src="./../images/Collection.png" alt=""></span>
-                <a href="./myCollection.html">我的收藏</a>
+                <a href="./my_collection.html?type=000">我的收藏</a>
             </li>
             <li class="customerService">
                 <span><img src="./../images/customer.png" alt=""></span>
@@ -242,7 +182,7 @@
             </li>
             <li class="userSettings">
                 <span><img src="./../images/setting.png" alt=""></span>
-                <a href="./userSettings.html">用户设置</a>
+                <a href="./user_settings.html">用户设置</a>
             </li>
         </ul>
     </div>
@@ -255,21 +195,72 @@
     <script>
         var funObj = {
             inits: function() {
-                this.collectionFun();
+                common.recomFun(2); //登陆左边的推荐广告
+                this.everyListFun(); //意向单
+                this.askintentionsFun(); //订单数量
+                this.getFavoritesFun(); //收藏
+                this.collectionFun(); //收藏鼠标划过
+            },
+            InterfaceObj: {
+                getFavorites: "http://39.108.191.122/Consumer/Favorites/getFavorites", //查询收藏
+                getintentions: "http://39.108.191.122/Consumer/Intentions/getintentions", //意向单
+                askintentions: "http://39.108.191.122/Consumer/Intentions/askintentions", //订单数量
             },
             collectionFun: function() {
-                $(".imgBox").hover(function() {
+                $("#CollectionBox").on("mouseenter", ".imgBox", function() {
                     $(this).find("div.shop").stop().animate({
                         marginTop: "-30px",
                         height: "30px"
                     }, 500)
-                }, function() {
+                });
+                $("#CollectionBox").on("mouseleave", ".imgBox", function() {
                     $(this).find("div.shop").stop().animate({
                         marginTop: "0",
                         height: "0"
                     }, 500)
+                });
+            },
+            getFavoritesFun: function() {
+                var getFavoritesObj = {
+                    type: 201,
+                    page: 1
+                }
+                common.ajaxFun(funObj.InterfaceObj.getFavorites, "GET", getFavoritesObj, function(res) {
+                    if (res.status == 1) {
+                        common.IndexfavoritesStr(res.data, $("#CollectionBox"), 6)
+                    } else if (res.status == -1) {
+                        alert("收藏接口出错了！")
+                    }
                 })
+            },
+            askintentionsFun: function() {
+                common.ajaxFun(funObj.InterfaceObj.askintentions, "GET", {}, function(res) {
+                    if (res.status == 1) {
+                        $("#whloe").html(res.data.whloe);
+                        $("#newly").html(res.data.newly);
+                        $("#confirmed").html(res.data.confirmed);
+                    } else if (res.status == -1) {
+                        alert("首页意向单查询接口出错了！")
+                    }
+                })
+            },
+            everyListFun: function() {
+                var getintentionsObj = {
+                    type: "000",
+                    status: 1, //1  待确认，2 已确认，3 全部
+                    page: 1,
+                    usertype: 1 //暂时的，上线的时候就去掉了 1:厂商 2:用户   2显示brandName 1不显示brandName
+                };
+                common.ajaxFun(funObj.InterfaceObj.getintentions, "GET", getintentionsObj, function(res) {
+                    if (res.status == 1) {
+                        common.intentionsStr(res, $("#unconfirmedOrder"), true);
+                    } else if (res.status == -1) {
+                        alert("意向单接口出错了！")
+                    }
+                });
+
             }
+
         }
         funObj.inits();
     </script>

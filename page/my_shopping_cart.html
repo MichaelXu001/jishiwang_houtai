@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>我的意向单</title>
+    <title>我的购物车</title>
     <link rel="stylesheet" href="./../css/common.css">
     <link rel="stylesheet" href="./../css/style.css">
 </head>
@@ -23,7 +23,7 @@
             <li class="legalService"><a href="">法律服务</a></li>
             <li class="quit"><a href="">退出</a></li>
         </ul>
-        <div class="namePic"><img src="./../images/1.jpg" alt=""></div>
+        <div class="namePic"><img alt=""></div>
     </div>
 </div>
 <div class="main">
@@ -31,15 +31,9 @@
         <div class="rightMain" id="rightMain">
             <div class="projectType">
                 <ul>
-                    <li class="active">
-                        机械施工一体化
-                    </li>
-                    <li>
-                        工程机械厂价
-                    </li>
-                    <li>
-                        工程机械租赁
-                    </li>
+                    <li class="active">全部意向单</li>
+                    <li>未确认意向单</li>
+                    <li>已确认意向单</li>
                 </ul>
                 <div class="searchBox">
                     <div class="searchBtn"></div>
@@ -47,9 +41,10 @@
                 </div>
             </div>
             <ul class="orderType">
-                <li class="active">全部意向单</li>
-                <li>未确认意向单</li>
-                <li>已确认意向单</li>
+                <li class="active">全部类型</li>
+                <li>机械施工一体化</li>
+                <li>工程机械厂家</li>
+                <li>工程机械租赁</li>
             </ul>
             <div class="OrderList">
                 <div class="everyList">
@@ -85,21 +80,21 @@
                 <span><img src="./../images/center.png" alt=""></span>
                 <a href="./index.html">用户中心首页</a>
             </li>
-            <li class="myIntentionOrder  active">
+            <li class="myIntentionOrder">
                 <span><img src="./../images/IntentionOrder.png" alt=""></span>
-                <a href="./myIntentionOrder.html">我的意向单</a>
+                <a href="./my_intention_order.html?type=000&status=3">我的意向单</a>
             </li>
             <li class="myOrder">
                 <span><img src="./../images/order.png" alt=""></span>
-                <a href="./myOrder.html">我的订单</a>
+                <a href="./my_order.html">我的订单</a>
             </li>
-            <li class="myShoppingCart">
+            <li class="myShoppingCart active">
                 <span><img src="./../images/ShoppingCart.png" alt=""></span>
-                <a href="./myShoppingCart.html">我的购物车</a>
+                <a href="./my_shopping_cart.html">我的购物车</a>
             </li>
             <li class="myCollection">
                 <span><img src="./../images/Collection.png" alt=""></span>
-                <a href="./myCollection.html">我的收藏</a>
+                <a href="./my_collection.html?type=000">我的收藏</a>
             </li>
             <li class="customerService">
                 <span><img src="./../images/customer.png" alt=""></span>
@@ -107,7 +102,7 @@
             </li>
             <li class="userSettings">
                 <span><img src="./../images/setting.png" alt=""></span>
-                <a href="./userSettings.html">用户设置</a>
+                <a href="./user_settings.html">用户设置</a>
             </li>
         </ul>
     </div>

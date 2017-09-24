@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户设置</title>
+    <link rel="stylesheet" href="./../css/common.css">
+    <link rel="stylesheet" href="./../css/style.css">
+</head>
+<div class="nav">
+    <div class="leftgroup">
+        <div class="logo" id="logo">
+            <a href="./index.html"></a>
+        </div>
+        <div class="telescopic shrink" id="telescopic"><img src="./../images/zd.png" alt=""></div>
+    </div>
+    <div class="rightgroup">
+        <ul>
+            <li class="name"><a href="">旭阳科技</a></li>
+            <li class="intentionOrder"><a href="">意向单</a></li>
+            <li class="legalService"><a href="">法律服务</a></li>
+            <li class="quit"><a href="">退出</a></li>
+        </ul>
+        <div class="namePic"><img alt=""></div>
+    </div>
+</div>
+<div class="main">
+    <div class="container">
+        <div class="rightMain" id="rightMain">
+            <div class="projectType" id="changeSetting" style="height:65px;">
+                <ul>
+                    <li class="active">企业资料</li>
+                    <li>安全设置</li>
+                </ul>
+            </div>
+            <div class="settingMain" id="settingMain">
+                <div class="securityBox none">
+                    <div class="reviseinfor revisePwd">
+                        <p>修改密码</p>
+                        <div class="revisePwdBtn">修改密码</div>
+                        <div class="inputBox none">
+                            <iframe name="ajaxFrame1" id="ajaxFrame1" style="display: none;"></iframe>
+                            <form target="ajaxFrame1" action="">
+                                <ul>
+                                    <li><input type="password" class="pass" id="pass" placeholder="请输入旧密码" required="required"></li>
+                                    <li><input type="password" class="password" id="password" placeholder="请输入新密码" required="required"></li>
+                                    <li>
+                                        <input type="password" class="password2" id="password1" placeholder="再次输入新密码" required="required">
+                                        <!-- <div class="change">修改</div> -->
+                                        <input type="submit" value="修改" id="chanpass" class="inputBtn">
+                                        <div class="cancel">取消</div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="reviseinfor reviseTel">
+                        <p>手机绑定</p>
+                        <div class="oldNum" id="oldNum"></div>
+                        <div class="revisePwdBtn">更改绑定</div>
+                        <div class="inputBox  none">
+                            <ul>
+                                <li>
+                                    <input type="text" class="pass" placeholder="请输入旧手机号">
+                                </li>
+                                <li>
+                                    <input type="text" class="password" placeholder="请输入新手机号">
+                                    <div class="codeBtn">获取验证码</div>
+                                </li>
+                                <li>
+                                    <input type="text" class="password2" placeholder="输入验证码">
+                                    <div class="change">修改</div>
+                                    <div class="cancel">取消</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="reviseinfor reviseEmail">
+                        <p>邮箱绑定</p>
+                        <div class="oldNum" id="oldEmail">13232323223@163.com</div>
+                        <div class="revisePwdBtn">更改绑定</div>
+                        <div class="inputBox none">
+                            <ul>
+                                <!-- <li><input type="password" class="pass" placeholder="请输入邮箱"></li> -->
+                                <li>
+                                    <input type="text" class="password" placeholder="请输入邮箱">
+                                    <div class="codeBtn">获取验证码</div>
+                                </li>
+                                <li>
+                                    <input type="text" class="password2" placeholder="请输入验证码">
+                                    <div class="change">修改</div>
+                                    <div class="cancel">取消</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="reviseinfor revisePic">
+                        <p>实名认证</p>
+                        <div class="qualifications">
+                            <div class="qualificationsImg">
+                                <img src="./../images/qualificationsBigImg.jpg" alt="">
+                                <div class="closeImg"></div>
+                            </div>
+                            <div class="qualificationsImg">
+                                <img src="./../images/1.jpg" alt="">
+                                <div class="closeImg"></div>
+                            </div>
+                            <div class="qualificationsImg">
+                                <img src="./../images/1.jpg" alt="">
+                                <div class="closeImg"></div>
+                            </div>
+                            <div class="qualificationsImg">
+                                <img src="./../images/1.jpg" alt="">
+                                <div class="closeImg"></div>
+                            </div>
+                            <div class="uploadImg"><input type="file" id="uploadImg"><label for="uploadImg"></label></div>
+                        </div>
+                        <div class="warning">*上传企业资质或身份证件（最多上传5张）</div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="enterpriseInforBox">
+                    <div class="reviseinfor reviseUsername">
+                        <p>更改名称</p>
+                        <div class="userName" id="userName"></div>
+                        <div class="revisePwdBtn">更改名称</div>
+                        <div class="inputBox none">
+                            <iframe name="ajaxFrame2" id="ajaxFrame2" style="display: none;"></iframe>
+                            <form target="ajaxFrame2" action="">
+                                <ul>
+                                    <li>
+                                        <input type="text" class="changeuserName" id="changeuserName" required="required" value="">
+                                        <!-- <div class="change">修改</div> -->
+                                        <input type="submit" value="修改" id="changeNameBtn" class="inputBtn">
+                                        <div class="cancel">取消</div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="reviseinfor reviseLogo">
+                        <p>更改logo</p>
+                        <form id="jvForm" action="o_save.shtml" method="get" enctype="multipart/form-data">
+                            <div class="qualifications">
+                                <!-- <div class="qualificationsImg">
+                                <img src="./../images/1.jpg" alt="">
+                                <div class="closeImg"></div>
+                            </div> -->
+                                <div class="uploadImg"><input type="file" id="uploadImgLogo" name="pic"><label for="uploadImgLogo"></label></div>
+                            </div>
+                        </form>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="reviseinfor addAdress">
+                        <div class="evaryAdress">
+                            <p>地址管理</p>
+                            <div class="adress">北京市朝阳区skqwenqlknwelq</div>
+                            <div class="closeAdress"></div>
+                        </div>
+                        <div class="evaryAdress">
+                            <p></p>
+                            <div class="adress">北京市朝阳区sdakl9号</div>
+                            <div class="closeAdress"></div>
+                        </div>
+                        <div class="evaryAdress">
+                            <p></p>
+                            <div class="adress">北京市朝阳区sdakllkqwenqlknwelq</div>
+                            <div class="closeAdress"></div>
+                        </div>
+
+                        <div class="addAdressgroup">
+                            <div class="selects">
+                                <select name="省" id="province" class="province">
+                                    <!-- <option value="">请选择</option> -->
+                                </select>
+                            </div>
+                            <div class="selects">
+                                <select name="省" id="city" class="city">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                            <div class="selects">
+                                <select name="省" id="county" class="county">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                            <div class="inputBox">
+                                <ul>
+                                    <li>
+                                        <input type="text" class="changeuserName" placeholder="请输入详细地址">
+                                        <div class="change" id="addAdressBtn">新增</div>
+                                        <div class="cancelAddress">取消</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="leftMenu" id="leftMenu">
+        <ul>
+            <li class="UserCenter">
+                <span><img src="./../images/center.png" alt=""></span>
+                <a href="./index.html">用户中心首页</a>
+            </li>
+            <li class="myIntentionOrder">
+                <span><img src="./../images/IntentionOrder.png" alt=""></span>
+                <a href="./my_intention_order.html?type=000&status=3">我的意向单</a>
+            </li>
+            <li class="myOrder">
+                <span><img src="./../images/order.png" alt=""></span>
+                <a href="./my_order.html">我的订单</a>
+            </li>
+            <li class="myShoppingCart">
+                <span><img src="./../images/ShoppingCart.png" alt=""></span>
+                <a href="./my_shopping_cart.html">我的购物车</a>
+            </li>
+            <li class="myCollection">
+                <span><img src="./../images/Collection.png" alt=""></span>
+                <a href="./my_collection.html?type=000">我的收藏</a>
+            </li>
+            <li class="customerService">
+                <span><img src="./../images/customer.png" alt=""></span>
+                <a href="">客户服务</a>
+            </li>
+            <li class="userSettings active">
+                <span><img src="./../images/setting.png" alt=""></span>
+                <a href="./user_settings.html">用户设置</a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<div class="qualificationsBigImg none">
+    <div class="closeBigImg"><img src="./../images/icon_close.png" alt=""></div>
+    <div class="BigImg"><img src="./../images/qualificationsBigImg.jpg" alt=""></div>
+</div>
+
+<body>
+    <script src="./../js/jquery.min.js"></script>
+    <script src="./../js/md5.js"></script>
+    <script src="./../js/common.js"></script>
+    <script src="./../js/jquery.form.js"></script>
+    <script>
+        var funObj = {
+            inits: function() {
+                this.changeSettingtFun();
+                this.reviseFun(); //修改密码
+                this.changeNameFun(); //修改用户名
+                this.changeAdress(); //增加地址的三级联动
+                this.changeLogo(); //更改logo上传图片
+            },
+            InterfaceObj: {
+                chanpass: "http://39.108.191.122/Portal/User/chanpass", //修改密码
+                askusers: "http://39.108.191.122/Portal/User/askusers", //修改用户名
+                linkageone: "http://39.108.191.122/Portal/User/linkageone", //三级联动－省
+                linkagetwo: "http://39.108.191.122/Portal/User/linkagetwo", //三级联动－市
+                linkagethree: "http://39.108.191.122/Portal/User/linkagethree", //三级联动－省
+                ajaxuploadentlogo: "http://39.108.191.122/Portal/User/ajaxuploadentlogo" //修改头像
+            },
+            changeSettingtFun: function() {
+                $("#changeSetting").on("click", "li", function() {
+                    $(this).addClass("active").siblings("li").removeClass("active")
+                    var ind = $(this).index();
+                    $("#settingMain").children("div").eq(ind).hide().siblings("div").show();
+                })
+            },
+            changeLogo: function() {
+                $("#uploadImgLogo").on("change", function(res) {
+                    console.log(res);
+
+                    uploadPic();
+                });
+
+                function uploadPic() {
+                    // 上传设置  
+                    var options = {
+                        // 规定把请求发送到那个URL  
+                        url: "http://39.108.191.122/Portal/User/ajaxuploadentlogo",
+                        // 请求方式  
+                        type: "get",
+                        // 服务器响应的数据类型  
+                        dataType: "json",
+                        // 请求成功时执行的回调函数  
+                        success: function(data, status, xhr) {
+                            // 图片显示地址  
+                            console.log(data)
+                        }
+                    };
+
+                    $("#jvForm").ajaxSubmit(options);
+                }
+            },
+            changeAdress: function() {
+                common.ajaxFun(funObj.InterfaceObj.linkageone, "GET", {}, function(res) {
+                    var str = "<option value=>请选择</option>";
+                    $.each(res, function(i, v) {
+                        str += "<option value=" + v.provinceid + ">" + v.province + "</option>"
+                    })
+                    $("#province").html($(str));
+                });
+                $("#province").on("change", function() {
+                    var provinceID = $(this).val();
+                    common.ajaxFun(funObj.InterfaceObj.linkagetwo, "GET", {
+                        type: provinceID
+                    }, function(res) {
+
+                        var str = "";
+                        if (res.status == -1) {
+                            str = "<option value=>请选择</option>";
+                            $("#county").html($(str));
+                            $("#city").html($(str));
+                        } else {
+                            $.each(res, function(i, v) {
+                                str += "<option value=" + v.cityid + ">" + v.city + "</option>"
+                            })
+                            $("#city").html($(str));
+                            common.ajaxFun(funObj.InterfaceObj.linkagethree, "GET", {
+                                type: res[0].cityid
+                            }, function(res) {
+                                var str = "";
+                                if (res.status == -1) {
+                                    str = "<option value=>请选择</option>";
+                                } else {
+                                    $.each(res, function(i, v) {
+                                        str += "<option value=" + v.areaid + ">" + v.area + "</option>"
+                                    })
+                                }
+                                $("#county").html($(str));
+                            });
+                        }
+                    });
+                });
+                $("#city").on("change", function() {
+                    var cityID = $(this).val();
+                    common.ajaxFun(funObj.InterfaceObj.linkagethree, "GET", {
+                        type: cityID
+                    }, function(res) {
+                        var str = "";
+                        $.each(res, function(i, v) {
+                            str += "<option value=" + v.areaid + ">" + v.area + "</option>"
+                        })
+                        $("#county").html($(str));
+                    });
+                });
+
+            },
+            reviseFun: function() {
+                $(".revisePwdBtn").on("click", function() {
+                    $(this).hide();
+                    $(this).prevAll("div").hide();
+                    $(this).next("div.inputBox").show();
+                    funObj.chanpassFun();
+                });
+                $(".cancel").on("click", function() {
+                    console.log($(this))
+                    $(this).parents("div.inputBox").prevAll("div").show();
+                    $(this).parents("div.inputBox").hide();
+                });
+            },
+            changeNameFun: function() {
+                $("#changeNameBtn").click(function() {
+                    var changeuserName = $("#changeuserName").val(),
+                        that = $(this);
+
+                    if (changeuserName != "") {
+                        common.ajaxFun(funObj.InterfaceObj.askusers, "GET", {
+                            "username": changeuserName
+                        }, function(res) {
+                            // console.log(res);
+                            if (res.status == 1) {
+                                alert("修改成功");
+                                that.parents("div.inputBox").prevAll("div").show();
+                                that.parents("div.inputBox").hide();
+                            } else if (res.status == -2) {
+                                alert("未知错误，返回－2");
+                            } else if (res.status == -1) {
+                                alert("名字已经有啦，返回－1");
+                            }
+                        })
+
+                    }
+
+                })
+            },
+            chanpassFun: function() {
+                $("#chanpass").click(function() {
+                    var pass = $("#pass").val(),
+                        password = $("#password").val(),
+                        password1 = $("#password1").val(),
+                        chanpassObj = {},
+                        that = $(this);
+                    if (password != password1) {
+                        alert("两次输入的密码不一样！");
+                        $("#password").val("")
+                        $("#password1").val("")
+                    } else {
+                        if (pass != "" && password != "" && password != "") {
+                            chanpassObj.pass = md5($("#pass").val());
+                            chanpassObj.password = md5($("#password").val());
+                            common.ajaxFun(funObj.InterfaceObj.chanpass, "GET", chanpassObj, function(res) {
+                                // console.log(res);
+                                if (res.status == 1) {
+                                    alert("修改成功");
+                                    that.parents("div.inputBox").prevAll("div").show();
+                                    that.parents("div.inputBox").hide();
+                                } else {
+                                    alert("修改失败，返回－1");
+                                }
+                            })
+                        }
+                    }
+
+                })
+            }
+        }
+        funObj.inits();
+    </script>
+</body>
+
+</html>

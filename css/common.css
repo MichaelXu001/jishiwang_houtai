@@ -236,8 +236,19 @@ img {
 }
 
 #page {
-    text-align: center;
-    padding-top: 20px;
+    /* text-align: center;
+    padding-top: 20px; */
+}
+
+.pageBox {
+    position: absolute;
+    height: 32px;
+    padding: 10px 0;
+    right: 0;
+    bottom: 0px;
+    text-align: right;
+    background: #f6f6f6;
+    width: 100%;
 }
 
 .fl {

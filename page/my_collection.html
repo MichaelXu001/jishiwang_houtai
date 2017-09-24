@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的收藏</title>
+    <link rel="stylesheet" href="./../css/common.css">
+    <link rel="stylesheet" href="./../css/style.css">
+    <link rel="stylesheet" href="./../css/laypage.css">
+</head>
+<div class="nav">
+    <div class="leftgroup">
+        <div class="logo" id="logo">
+            <a href="./index.html"></a>
+        </div>
+        <div class="telescopic shrink" id="telescopic"><img src="./../images/zd.png" alt=""></div>
+    </div>
+    <div class="rightgroup">
+        <ul>
+            <li class="name"><a href="">旭阳科技</a></li>
+            <li class="intentionOrder"><a href="">意向单</a></li>
+            <li class="legalService"><a href="">法律服务</a></li>
+            <li class="quit"><a href="">退出</a></li>
+        </ul>
+        <div class="namePic"><img alt=""></div>
+    </div>
+</div>
+<div class="main">
+    <div class="container">
+        <div class="rightMain" id="rightMain">
+            <div class="projectType" id="projectType">
+                <ul>
+                    <li data_type="000">全部类型</li>
+                    <li data_type="101">机械施工一体化</li>
+                    <li data_type="201">工程机械厂家</li>
+                    <li data_type="301">工程机械租赁</li>
+                    <li data_type="401">工程机械配件</li>
+
+                </ul>
+                <div class="searchBox">
+                    <div class="searchBtn"></div>
+                    <input type="text" placeholder="搜索" class="searchInput">
+                </div>
+            </div>
+            <div class="OrderList collectionList" id="collectionList">
+                <!-- <div class="everyList">
+                    <div class="topInfor">
+                        <div class="firstInfor fl">
+                            <div class="times fl">2017-08-24 12:00:00</div>
+                            <div class="brandName fl">阿特拉斯佳斯公司（北京）</div>
+                        </div>
+                    </div>
+                    <div class="goodsInfor">
+                        <div class="goodsImg fl"><img src="./../images/1.jpg" alt=""></div>
+                        <div class="goodsName fl">YTG786大汽车</div>
+                        <div class="goodsModel fl">AXCDS210</div>
+                        <div class="goodsNumber fl">2</div>
+                        <div class="goodsPrice fl">单价</div>
+                        <div class="cancelCollectionBtn fl">
+                            <p>取消收藏</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div style="height:32px;margin-bottom:0px;background: #f6f6f6;"></div>
+            <div class="pageBox">
+                <div id="page"></div>
+            </div>
+        </div>
+    </div>
+    <div class="leftMenu" id="leftMenu">
+        <ul>
+            <li class="UserCenter">
+                <span><img src="./../images/center.png" alt=""></span>
+                <a href="./index.html">用户中心首页</a>
+            </li>
+            <li class="myIntentionOrder">
+                <span><img src="./../images/IntentionOrder.png" alt=""></span>
+                <a href="./my_intention_order.html?type=000&status=3">我的意向单</a>
+            </li>
+            <li class="myOrder">
+                <span><img src="./../images/order.png" alt=""></span>
+                <a href="./my_order.html">我的订单</a>
+            </li>
+            <li class="myShoppingCart">
+                <span><img src="./../images/ShoppingCart.png" alt=""></span>
+                <a href="./my_shopping_cart.html">我的购物车</a>
+            </li>
+            <li class="myCollection active">
+                <span><img src="./../images/Collection.png" alt=""></span>
+                <a href="./my_collection.html?type=000">我的收藏</a>
+            </li>
+            <li class="customerService">
+                <span><img src="./../images/customer.png" alt=""></span>
+                <a href="">客户服务</a>
+            </li>
+            <li class="userSettings">
+                <span><img src="./../images/setting.png" alt=""></span>
+                <a href="./user_settings.html">用户设置</a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<body>
+    <script src="./../js/jquery.min.js"></script>
+    <script src="./../js/common.js"></script>
+    <script src="./../js/laypage.js"></script>
+    <script>
+        var funObj = {
+            inits: function() {
+                this.getFavoritesFun();
+            },
+            urlparameter: {
+                type: common.Geturl("type"),
+                fenye: location.hash.replace('#!fenye=', '')
+            },
+            InterfaceObj: {
+                getFavorites: "http://39.108.191.122/Consumer/Favorites/getFavorites" //查询收藏
+            },
+            getFavoritesFun: function() {
+                if (funObj.urlparameter.type == 000) {
+                    $("#projectType li").eq(0).addClass("active").siblings("li").removeClass("active");
+                } else if (funObj.urlparameter.type == 101) {
+                    $("#projectType li").eq(1).addClass("active").siblings("li").removeClass("active");
+                } else if (funObj.urlparameter.type == 201) {
+                    $("#projectType li").eq(2).addClass("active").siblings("li").removeClass("active");
+                } else if (funObj.urlparameter.type == 301) {
+                    $("#projectType li").eq(3).addClass("active").siblings("li").removeClass("active");
+                } else if (funObj.urlparameter.type == 401) {
+                    $("#projectType li").eq(4).addClass("active").siblings("li").removeClass("active");
+                }
+                var getFavoritesObj = {
+                    type: 201,
+                    page: 1
+                }
+                if (funObj.urlparameter.fenye != "") {
+                    getFavoritesObj.page = funObj.urlparameter.fenye;
+                }
+                common.ajaxFun(funObj.InterfaceObj.getFavorites, "GET", getFavoritesObj, function(res) {
+                    if (res.status == 1) {
+                        common.getFavoritesStr(res);
+                        common.laypageFun(res.count, getFavoritesObj, funObj.InterfaceObj.getFavorites, 1);
+                    } else if (res.status == -1) {
+                        alert("收藏接口出错了！")
+                    }
+                })
+            },
+        }
+        funObj.inits();
+    </script>
+</body>
+
+</html>
