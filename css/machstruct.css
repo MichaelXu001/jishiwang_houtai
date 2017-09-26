@@ -1,0 +1,170 @@
+.pdtsteps{
+	height: 100px;
+	width: 100px;
+	line-height:100px;
+	text-align:center;
+	border:1px solid #ededed;
+	float: left;
+	margin-left: 50px;
+	background: #F2F2F2;
+}
+#top{
+	background: #f1f1f1 none repeat scroll 0 0;
+    min-width: 1232px;
+    width: 100%;
+}
+.top{
+	height: 50px;
+    margin: 0 auto;
+    width: 1212px;
+}
+.logo{
+	padding: 0 11px;
+	margin-top: -1px;
+}
+.top .home {
+    background-image: url("../images/index/home.png");
+    background-repeat: no-repeat;
+    float: left;
+    font-size: 12px;/*
+    height: 50px;*/
+    line-height: 48px;
+    text-indent: 20px;
+    width: 200px;
+}
+.top .home :hover{
+	text-decoration:none;
+}
+.top ul {/*
+	height: 50px;*/
+	width: auto;
+	float: right;
+	line-height: 48px;
+}
+.top ul li {
+	width: auto;/*
+	height: 50px;*/
+	float: right;
+	margin: 0 10px;
+}
+.top ul li.spacer {
+    width: 1px;
+    height: 12px;
+    padding: 0;
+	margin: 9px 0 0 0;
+    background: #ddd;
+    overflow: hidden;
+}
+.top ul li a {
+	height: 12px;
+	font-size: 12px;
+	line-height: 48px;
+	color: #353535;
+	overflow:hidden;
+	padding: 9px 5px;
+}
+.top ul li a:hover {
+	color: #f3a022;
+	text-decoration:none;
+}
+.top ul li a img {
+	vertical-align: middle;
+	/*margin: -5px 5px 0 0;*/
+}
+
+/*******************************  第二种头部  ***************************************/
+.top1{
+	width: 100%;
+	background: #f3a022;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	height: 48px;
+	overflow: hidden;
+}
+.top1 span{
+	color: white;
+	width: 120px;
+	/*padding: 0 3px;*/
+}
+span.pageMain{
+	/*padding-left: 3px;*/
+}
+span.spacer1{
+	display: inline-block;
+	width: 1px;
+    height: 12px;
+    padding: 0;
+    margin: 19px 0 0 0;
+    background: #FFBF5A;
+    overflow: hidden;
+}
+.top1 .home1{
+    background-repeat: no-repeat;
+    float: left;
+    font-size: 16px;
+    line-height: 48px;
+   /* text-indent: 20px;*/
+    width: 240px;
+}
+.top1 .home1 a{
+       display: block;
+    float: left;
+    background: #F8B03E;
+    margin-right: 10px;
+    height: 100%;
+}
+.top1 .home1 a:last-child{
+	background: #F3A022;
+}
+.top1 .home1 a:first-child:hover{
+	box-shadow: 0 0 5px #ad6f0d;
+}
+
+.top1 .home1 a:nth-of-type(2){
+	padding: 0 10px;
+}
+.top1 .home1 a:nth-of-type(2):hover{
+	background: #F8B03E;
+	text-shadow: 0 0 3px #fff;
+}
+
+.top1 ul {
+	width: auto;
+	float: right;
+}
+.top1 ul li {
+	width: auto;
+	float: right;
+	/*margin: 0 6px;*/
+}
+.top1 ul li.spacer1 {
+    width: 1px;
+    height: 12px;
+    padding: 0;
+	margin: 19px 0 0 0;
+    background: #FFBF5A;
+    overflow: hidden;
+}
+.top1 ul li a {
+	height: 100%;
+    font-size: 14px;
+    line-height: 48px;
+    color: #FFFFFF;
+    overflow: hidden;
+    padding: 0px 14px;
+    display: block;
+    float: left;
+}
+.top1 ul li a:hover{
+	background: #f8b03e;
+}
+.top1 ul li a.username{
+	background: #f3a022;
+}
+.top1 ul li a.username:hover{
+	text-shadow: 0 0 3px #fff;
+}
+.top1 ul li a img {
+	vertical-align: middle;
+	/*margin: -5px 5px 0 0;*/
+}

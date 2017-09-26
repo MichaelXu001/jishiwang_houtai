@@ -1,0 +1,368 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.topAnno{
+	background: #000;
+}
+.topAnno img{
+	display: block;
+	margin:0 auto;
+	width: 100%;
+	height: 50px;
+}
+/* 头部 */
+#top {
+	height: 30px;
+	width: 100%;
+	min-width:1232px;
+	background: #f1f1f1;
+	overflow: hidden;
+}
+.top {
+	height: 30px;
+	width: 1212px;
+	margin: 0 auto;
+}
+.top>.home {
+	height: 30px;
+	width: 200px;
+	float: left;
+	line-height: 30px;
+	background-image: url(../images/index/home.png);
+	background-repeat: no-repeat;
+	text-indent: 20px;
+	font-size: 12px;
+}
+.top>.home>:hover{
+	text-decoration:none;
+}
+.top>ul {
+	height: 30px;
+	width: auto;
+	float: right;
+	line-height: 30px;
+}
+.top>ul>li {
+	width: auto;
+	height: 30px;
+	float: right;
+	margin: 0 10px;
+}
+.top>ul>li>.spacer {
+    width: 1px;
+    height: 12px;
+    padding: 0;
+	margin: 9px 0 0 0;
+    background: #ddd;
+    overflow: hidden;
+}
+.top>ul>li>a {
+	height: 12px;
+	font-size: 12px;
+	line-height: 30px;
+	color: #353535;
+	overflow:hidden;
+	padding: 9px 5px;
+}
+.top>ul>li>a:hover {
+	color: #f3a022;
+	text-decoration:none;
+}
+.top>ul>li>a>img {
+	vertical-align: middle;
+	/*margin: -5px 5px 0 0;*/
+}
+header {
+	height: 100px;
+	min-width:1212px;
+	background: #FFFEFE;
+	margin: 0 auto 0 auto;
+	/*padding-left: 69px;*/
+}
+header .logo {
+	width: 360px;
+	height: 77px;
+	float:left;
+	padding-top: 23px;
+}
+header .logo>img{
+	width: 180px;
+	height: 60px;
+	margin-top: 20px;
+}
+header .search {
+	width: 630px;
+	height: 40px;
+	float:left;
+	margin:34px 0 0 0;
+}
+header .search input{
+	width: 456px;
+	height: 40px;
+	border: 2px solid #f48713;
+	border-right: 0;
+	padding:0;
+	margin:0;
+	vertical-align: middle;
+	float:left;
+	font-size:14px;
+	padding-left:15px;
+	line-height:40px;
+	color:#666;
+	font-family: "microsoft yahei";
+	box-sizing: border-box;
+	padding-bottom: 2px;
+}
+.dis-options{
+	width: 80px;
+	height: 38px;
+	line-height: 38px;
+	z-index: 100;
+	float: left;
+	margin-top: -40px;
+	padding-top: 1px;
+	padding-left: 10px;
+}
+.dis-options>img{
+	width: 20px;
+	float: left;
+	margin-top: 10px;
+}
+.input-selects{
+	width: 80px;
+	height: 40px;
+	position: relative;
+	border: 2px solid #FDAF17;
+	z-index: 100;
+	box-sizing: border-box;
+	border-right: 1px solid #FDAF17;
+	font-family: "宋体";
+	color: #666;
+}
+.input-selects:hover{
+	cursor: pointer;
+}
+.dis-options-text{
+	float: left;
+	width: 48px;
+}
+.selects-options{
+	width: 80px;
+	height: auto;
+	border: 2px solid #FDAF17;
+	float: left;
+	background: #fff;
+	margin-left: -2px;
+	margin-top: -2px;
+	z-index: 100;
+	box-sizing: border-box;
+}
+.selects-options>div{
+	height: 20px;
+	line-height: 20px;
+	margin-left: 10px;
+}
+.selects-options>div:hover{
+	color: #f3a022;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+
+header .search input:focus{
+	outline: 0;
+}
+header .search button{
+	width: 80px;
+	height: 36px;
+	background: #f48713;
+	border: 0;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 16px;
+	line-height: 36px;
+	padding:0;
+	float:left;
+	height:40px;
+	margin:0;
+	font-family: "microsoft yahei";
+	vertical-align: middle;
+}
+header .search button:hover{
+	background: #ff6600;
+}
+header .buy {
+	/*width: 128px;
+	height: 34px;*/
+	width: 160px;
+	height: 85px;
+	/*float: left;*/
+	/*margin: 36px 0 0 50px;*/
+	margin: 15px 15px 0 0;
+	float: right;
+	text-align: center;/*
+	border: 1px solid #dfdfdf;*/
+	border-radius: 2px;
+	background-color: #f9f9f9;
+	line-height: 34px;
+	color: #666;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	position: relative;
+}
+header .buy:hover {
+	/*border: 1px solid #EDA840;*/
+/*	color: #F3A022;*/
+	/*-webkit-box-shadow: 1px 1px 0 0 #F3A022;
+	box-shadow: 1px 1px 2px 0 #F3A022;*/
+}
+.buy-left {
+    width: 14px;
+    height: 18px;
+    background: url(../images/index/intention.png) no-repeat;
+	float:left;
+	margin: 8px 4px 0 15px;
+}
+header .buy:span {
+	text-align: center;
+}
+.buy-right {
+    width: 7px;
+    height: 13px;
+    font: 400 13px/13px simsun;
+	float:right;
+	margin: 11px 16px 0 8px;
+}
+.header_con{
+	width:1212px;
+	margin:0 auto;
+}
+/**************************************************/
+#nav {
+	height: 42px;
+	width: 100%;
+	min-width:1212px;
+	/*max-width: 1600px;*/
+	background: #FFFEFE;
+	border-bottom: 2px solid #f9aa38;
+	/*display: table;*/
+}
+nav {
+	width: 1218px;
+	height: 42px;
+	margin: 0 auto 0 auto;
+}
+nav>.alltitle{
+	height: 42px;
+	width: 194px;
+	background-image: url(../images/index/alltitle.png);
+	float: left;
+	color: #FFFFFF;
+	line-height: 42px;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: "microsoft yahei";
+	text-indent: 20px;
+}
+.alltitle>img:not(:last-child){
+	margin-top: 12px;
+	float: left;
+	margin-left: 20px;
+}
+.alltitle>img:not(:first-child){
+	float: right;
+	margin-right: 12px;
+	margin-top: 19px;
+}
+.alltitle>div{
+	margin-left: -10px;
+	float: left;
+
+}
+.img-items-nav{
+	margin-right: 10px;
+	float: left;
+	margin-top: 2px;
+}
+nav>ul {
+	height: 42px;
+	width: 738px;
+	float: left;
+	margin: 0 0 0 20px;
+	position: relative;
+}
+nav>ul>li {
+	width: auto;
+	height: auto;
+	float: left;
+	box-sizing: border-box;
+}
+nav ul .xunjia-dis{
+	position: absolute;
+	left: 570px;
+	top: -2px;
+	z-index: 9999;
+}
+nav ul .xunjia-dis a:nth-of-type(2){
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+}
+nav ul .xunjia-dis a:nth-of-type(3){
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+nav ul .xunjia-dis span{
+	display: inline-block;
+	font-family: cursive;
+	margin: 0 0 -1px 10px;
+	font-weight: bold;
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); 
+	-moz-transform:rotate(90deg); 
+	-webkit-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+}
+nav>ul>li>a {
+	font-size: 16px;
+    height: 42px;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font: 400 15px/42px "microsoft yahei";
+    color: #333;
+}
+nav>ul>li>a:hover {
+	color: #F3A022;
+	text-decoration: none;
+}
+nav>ul>li>a>img {
+	vertical-align: middle;
+}
+nav>.watchword{
+	height: 42px;
+	width: 250px;
+	float: right;
+	color: #B9272A;
+	font-family: "microsoft yahei";
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 42px;
+	text-align: center;
+	background-image: url(../images/index/watchword.png);
+	background-repeat: no-repeat;
+}
+
+.float-menu{
+	position: relative;
+}
+#sellerApplication{
+	/*background: #F89A14;*/
+	width: 80px;
+	height: 30px;
+	border-radius: 3px;
+}
+/*#sellerApplication:hover{
+	color: white;
+}*/

@@ -1,0 +1,102 @@
+﻿footer {
+    background: #33373C;
+}
+
+.service {
+    width: 1120px;
+    height: 180px;
+    margin: 0 auto;
+    border-bottom: solid 1px #777777;
+}
+
+.servicelist {
+    width: 208px;
+    float: left;
+}
+
+.servicelist div {
+    margin: 30px 0 20px 0;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.servicelist li {
+    font-size: 12px;
+    color: #AAAAAA;
+    line-height: 20px;
+}
+
+.servicelist li a {
+    color: #aaa;
+}
+
+.serviesmap {
+    border-left: solid 1px #777;
+    float: left;
+    margin-top: 30px;
+    width: 280px;
+}
+
+.serviesmap-num {
+    text-align: center;
+    font-size: 24px;
+    color: #FF8A38;
+}
+
+.serviesmap p {
+    font-size: 12px;
+    color: #AAAAAA;
+    line-height: 20px;
+    text-align: center;
+}
+
+.serviesmap-serveis {
+    width: 120px;
+    font-size: 12px;
+    color: #FF8A38;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #FF8A38;
+    margin: 15px auto;
+}
+
+.zhichi {
+    padding-top: 20px;
+}
+
+.gongan {
+    padding-bottom: 20px;
+}
+
+.zhichi,
+.gongan {
+    font-size: 12px;
+    color: #AAAAAA;
+    line-height: 20px;
+    text-align: center;
+}
+
+.gongan span {
+    font-size: 12px;
+    color: #fff;
+    line-height: 20px;
+    padding: 0 5px;
+}
+
+.footcopyright {
+    width: 1120px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.links-left p {
+    margin-bottom: 5px;
+}
+
+.links-left p,
+.links-left p a {
+    font-size: 12px;
+    color: #AAAAAA;
+    text-align: center;
+}
