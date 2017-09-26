@@ -413,6 +413,12 @@ img.authenticationLogo {
     margin: 20px;
 }
 
+.goodsInfor div.goodsImg a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .goodsName {}
 
 .goodsImg img {
@@ -705,13 +711,34 @@ img.authenticationLogo {
     margin-left: 20px;
 }
 
+.inputBox li input#changetelBtn,
+.inputBox li input#changeEmailBtn,
+.inputBox li input#addAdressBtn {
+    background: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    float: left;
+    height: 30px;
+    width: 54px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    color: #666666;
+    letter-spacing: 0.75px;
+    cursor: pointer;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
 .inputBox li .inputBtn {
     padding-left: 0;
     height: 32px;
     line-height: 32px;
 }
 
-.inputBox li div.codeBtn {
+.inputBox li .codeBtn,
+.inputBox li input#codeTelBtn {
+    padding: 0;
     height: 30px;
     width: 82px;
     text-align: center;
@@ -722,6 +749,7 @@ img.authenticationLogo {
     color: #999999;
     float: left;
     margin-left: 20px;
+    cursor: pointer;
 }
 
 .qualifications {
@@ -803,8 +831,8 @@ img.authenticationLogo {
 }
 
 .qualificationsBigImg .BigImg {
-    width: 60%;
-    margin: 150px auto 0 auto;
+    width: 50%;
+    margin: 4% auto;
 }
 
 .BigImg img {
@@ -842,6 +870,7 @@ img.authenticationLogo {
     background: url("./../images/icon_close.png") no-repeat;
     background-size: 100%;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .evaryAdress {
@@ -855,6 +884,10 @@ img.authenticationLogo {
 
 .evaryAdress .adress {
     padding-top: 0;
+}
+
+.evaryAdress .detailedAdress {
+    height: 40px;
 }
 
 .addAdress {
@@ -1032,4 +1065,12 @@ input.loginBtn {
 .collectionList {
     padding-top: 20px;
     margin-top: 15px;
+}
+
+.collectionList .goodsInfor div {
+    width: 20%;
+}
+
+.collectionList .goodsInfor div.goodsImg {
+    width: 80px;
 }

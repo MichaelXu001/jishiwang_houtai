@@ -113,13 +113,49 @@
         var funObj = {
             inits: function() {
                 this.getFavoritesFun();
+                this.bindGetFavorites();
             },
             urlparameter: {
                 type: common.Geturl("type"),
-                fenye: location.hash.replace('#!fenye=', '')
+                fenye: location.hash.replace('#!fenye=', ''),
             },
             InterfaceObj: {
                 getFavorites: "http://39.108.191.122/Consumer/Favorites/getFavorites" //查询收藏
+            },
+            bindGetFavorites: function() {
+                var getFavoritesObj = {
+                    type: funObj.urlparameter.type,
+                    page: 1,
+                    utype: 2, //暂时的，上线的时候就去掉了 1:厂商 2:用户   2显示brandName 1不显示brandName
+
+                }
+                if (funObj.urlparameter.fenye != "") {
+                    getFavoritesObj.page = funObj.urlparameter.fenye;
+                }
+                funObj.getFavoritesStrFun(getFavoritesObj);
+                $("#projectType ul").on("click", "li", function() { //类型筛选
+                    $(this).addClass("active").siblings("li").removeClass("active");
+                    getFavoritesObj.type = $(this).attr("data_type");
+                    getFavoritesObj.page = 1;
+                    funObj.getFavoritesStrFun(getFavoritesObj);
+                    var state = {
+                        'page_id': 1,
+                        'user_id': 5
+                    };
+                    var title = 'Hello World';
+                    var url = '?type=' + getFavoritesObj.type;
+                    history.pushState(state, title, url);
+                });
+            },
+            getFavoritesStrFun: function(getFavoritesObj) {
+                common.ajaxFun(funObj.InterfaceObj.getFavorites, "GET", getFavoritesObj, function(res) {
+                    if (res.status == 1) {
+                        common.getFavoritesStr(res);
+                        common.laypageFun(res.count, getFavoritesObj, funObj.InterfaceObj.getFavorites, 1);
+                    } else if (res.status == -1) {
+                        alert("收藏接口出错了！")
+                    }
+                })
             },
             getFavoritesFun: function() {
                 if (funObj.urlparameter.type == 000) {
@@ -133,21 +169,6 @@
                 } else if (funObj.urlparameter.type == 401) {
                     $("#projectType li").eq(4).addClass("active").siblings("li").removeClass("active");
                 }
-                var getFavoritesObj = {
-                    type: 201,
-                    page: 1
-                }
-                if (funObj.urlparameter.fenye != "") {
-                    getFavoritesObj.page = funObj.urlparameter.fenye;
-                }
-                common.ajaxFun(funObj.InterfaceObj.getFavorites, "GET", getFavoritesObj, function(res) {
-                    if (res.status == 1) {
-                        common.getFavoritesStr(res);
-                        common.laypageFun(res.count, getFavoritesObj, funObj.InterfaceObj.getFavorites, 1);
-                    } else if (res.status == -1) {
-                        alert("收藏接口出错了！")
-                    }
-                })
             },
         }
         funObj.inits();

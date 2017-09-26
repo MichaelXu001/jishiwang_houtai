@@ -1,6 +1,8 @@
 var commonUrl = {
     logout: "http://39.108.191.122/Portal/login/logout", //退出登陆
     askuser: "http://39.108.191.122/Portal/User/askuser", //基本信息
+    deladress: "http://39.108.191.122/Portal/User/deladress", //删除地址
+    delfavorites: "http://39.108.191.122/Consumer/Favorites/delfavorites", //取消收藏
     confintentions: "http://39.108.191.122/Consumer/Intentions/confintentions", //确认意向单
     recom: "http://39.108.191.122/Portal/User/recom" //广告位
 }
@@ -103,15 +105,15 @@ function Common() {
                 str += '<div class="times fl">' + v.addtime + '</div>'
                 str += '<div class="orderId fl">订单号：<span>' + v.intionsid + '</span></div>'
                 if (res.type == 2) {
-                    str += ' <div class="brandName fl"><a href="' + v.purl + '">' + v.entname + '</a></div>'
+                    str += ' <div class="brandName fl"><a href="' + v.enurl + '">' + v.entname + '</a></div>'
                 }
                 str += '</div>'
                 str += '<div class="secondInfor fr">买家：<span>' + v.contact + '&nbsp;&nbsp;&nbsp;&nbsp;' + v.telphone + '&nbsp;&nbsp;&nbsp;&nbsp;' + v.email + '</span>'
                 str += '</div>'
                 str += '</div>'
                 str += '<div class="goodsInfor">'
-                str += ' <div class="goodsImg fl"><img src="' + v.images + '" alt="' + v.proname + '"></div>'
-                str += ' <div class="goodsName fl">' + v.proname + '</div>'
+                str += ' <div class="goodsImg fl"><a href=' + v.purl + '><img src="' + v.images + '" alt="' + v.proname + '"></a></div>'
+                str += ' <div class="goodsName fl"><a href=' + v.purl + '>' + v.proname + '</a></div>'
                 str += '<div class="goodsModel fl">' + v.promodel + '</div>'
                 str += '<div class="goodsNumber fl">×' + v.count + '</div>'
                 str += '<div class="goodsPrice fl">¥' + v.price + '</div>'
@@ -159,7 +161,7 @@ function Common() {
             })
         },
         /**
-         * 
+         * 首页收藏
          * 
          * @param {res} res 
          * @param {ele} ele 
@@ -192,7 +194,7 @@ function Common() {
          * @param {totalpage} totalpage 分页总页数
          * @param {oldObj} oldObj 传给后台的对象
          * @param {url} url  ajax请求的地址
-         * @param {from} from  渲染的字符串调用 1:收藏 
+         * @param {from} from  渲染的字符串调用 1:收藏 ,2:意向单
          */
         this.laypageFun = function(totalpage, oldObj, url, from) {
             laypage({
@@ -229,30 +231,56 @@ function Common() {
                 str += '<div class="everyList">'
                 str += ' <div class="topInfor">'
                 str += '<div class="firstInfor fl">'
-                str += '<div class="times fl">' + '2017.09.22 12:30:00' + '</div>'
-                str += '<div class="brandName fl">' + v.entname + '</div>'
+                str += '<div class="times fl">' + v.addtime + '</div>'
+                if (res.type == 2) {
+                    str += ' <div class="brandName fl"><a href="' + v.enurl + '">' + v.entname + '</a></div>'
+                }
+                // str += '<div class="brandName fl">' + v.entname + '</div>'
                 str += '</div>'
                 str += '</div>'
                 str += ' <div class="goodsInfor">'
-                str += '<div class="goodsImg fl"><img src="' + v.images_Show + '" alt="' + v.name_Chn + '"></div>'
-                str += '<div class="goodsName fl">' + v.name_Chn + '</div>'
+                str += '<div class="goodsImg fl"><a href=' + v.purl + '><img src="' + v.images_Show + '" alt="' + v.name_Chn + '"></a></div>'
+                str += '<div class="goodsName fl"><a href=' + v.purl + '>' + v.name_Chn + '</a></div>'
                 str += '<div class="goodsModel fl">' + v.model + '</div>'
-                str += '<div class="goodsNumber fl">' + '1' + '</div>'
                 str += '<div class="goodsPrice fl">' + v.price + '</div>'
                 str += '<div class="cancelCollectionBtn fl">'
-                str += '<p data_pid="' + v.pid + '" data_type="' + v.type + '">取消收藏</p>'
+                str += '<p data_id="' + v.id + '" data_type="' + v.type + '">取消收藏</p>'
                 str += '</div>'
                 str += ' </div>'
                 str += '</div>'
             });
-            $("#collectionList").html(str)
+            $("#collectionList").html(str);
+            $("#collectionList").on("click", ".cancelCollectionBtn p", function() { //取消收藏
+                var that = $(this),
+                    cancelFavoritesObj = {
+                        pid: $(this).attr("data_id"),
+                        type: $(this).attr("data_type")
+                    } //delfavorites
+                common.ajaxFun(commonUrl.delfavorites, "GET", cancelFavoritesObj, function(res) {
+                    if (res.status == 1) {
+                        // var getFavoritesObj = {
+                        //     type: funObj.urlparameter.type,
+                        //     page: 1,
+                        //     utype: 2, //暂时的，上线的时候就去掉了 1:厂商 2:用户   2显示brandName 1不显示brandName
+
+                        // }
+                        // if (funObj.urlparameter.fenye != "") {
+                        //     getFavoritesObj.page = funObj.urlparameter.fenye;
+                        // }
+                        // // funObj.getFavoritesStrFun(getFavoritesObj);
+                        that.parents("div.everyList").remove();
+                    } else {
+                        alert("取消收藏接口返回－1");
+                    }
+                })
+
+            })
         }
     this.topNavInfor = function() {
-        common.ajaxFun(commonUrl.askuser, "GET", { type: 1 }, function(res) { //暂时的 上线前把type去掉
+        common.ajaxFun(commonUrl.askuser, "GET", { type: 2 }, function(res) { //暂时的 上线前把type去掉
             if (res.status == 1) {
                 $(".namePic img,#headerImg").attr({ "src": res.data.header, "alt": res.data.username });
                 $(".name a").html(res.data.username);
-                $("#oldNum").html(res.data.tel);
                 $("#oldEmail").html(res.data.email);
                 $("#userName").html(res.data.username);
                 $("#changeuserName").val(res.data.username);
@@ -260,6 +288,8 @@ function Common() {
                     $("#oldEmail").html("没填邮箱");
                 }
                 if (res.type == 1) {
+                    $("#oldNum").html(res.data.tel);
+                    $("#addAdress").hide();
                     $(".name a").attr("href", res.data.url);
                     if (res.data.status == 0) {
                         $("#Authentication").html("未认证");
@@ -275,6 +305,30 @@ function Common() {
                         $("#vip").attr({ "src": "./../images/vip2.png" });
                     }
                 } else if (res.type == 2) {
+                    var str = "";
+                    $.each(res.data.adress, function(i, v) {
+                        str += '<div class="detailedAdress">' +
+                            '<div class="adress">' + v + '</div>' +
+                            '<div class="closeAdress" data_id=' + i + '></div>' +
+                            '</div>'
+                    });
+                    $("#detailedAdressBox").html($(str));
+                    $("#oldNum").html(res.data.linkmantelephone);
+                    $("#detailedAdressBox").on("click", ".closeAdress", function() {
+                        var that = $(this),
+                            deladressObj = {
+                                id: that.attr("data_id")
+                            }
+                        common.ajaxFun(commonUrl.deladress, "GET", deladressObj, function(res) {
+                            console.log(res);
+                            if (res.status == 1) {
+                                that.parents(".detailedAdress").remove();
+                            } else if (res.status == -1) {
+                                alert("删除接口返回－1");
+                            }
+
+                        })
+                    });
                     if (res.data.status == 0) {
                         $("#Authentication").html("未实名");
                         $("#vip").attr({ "src": "./../images/vip2.png" });

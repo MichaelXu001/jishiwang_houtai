@@ -227,7 +227,7 @@
                 }
                 common.ajaxFun(funObj.InterfaceObj.getFavorites, "GET", getFavoritesObj, function(res) {
                     if (res.status == 1) {
-                        common.IndexfavoritesStr(res.data, $("#CollectionBox"), 6)
+                        common.IndexfavoritesStr(res.data, $("#CollectionBox"), 6);
                     } else if (res.status == -1) {
                         alert("收藏接口出错了！")
                     }

@@ -156,7 +156,7 @@
                 }
             },
             filterFun: function() {
-                var getintentionsObj = { //点击筛选没做
+                var getintentionsObj = {
                     type: funObj.urlparameter.type,
                     status: funObj.urlparameter.status, //1  待确认，2 已确认，3 全部
                     page: 1,
@@ -200,7 +200,7 @@
                     var url = '?type=' + getintentionsObj.type + '&status=' + getintentionsObj.status;
                     history.pushState(state, title, url);
                 });
-                funObj.everyListFun(getintentionsObj)
+                funObj.everyListFun(getintentionsObj);
             },
             everyListFun: function(getintentionsObj) {
                 common.ajaxFun(funObj.InterfaceObj.getintentions, "GET", getintentionsObj, function(res) {
