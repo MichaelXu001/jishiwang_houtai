@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://www.ryz.com/Consumer/Intentions/cartlist -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://www.ryz.com/Public/images/favicon.ico">
+
+    <title>购物车</title>
+    <link href="./../css/style_cart.css" rel="stylesheet" type="text/css">
+    <link href="./../css/machstruct.css" rel="stylesheet">
+    <link href="./../css/register.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./../css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../css/docs.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="__PUBLIC_/bootstrap/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./../js/hm.js"></script>
+    <script src="./../js/ie-emulation-modes-warning.js"></script>
+    <script src="./../js/jquery.min.js"></script>
+    <script src="./../js/jquery.cookie.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        /*弹出层*/
+
+        function layer(con) {
+            $("<div class='layer'><div class='layer_con'><div class='layer_con_tit'>提示</div><div class='layer_con_txt'>" + con + "</div><div class='layer_btn'><div>朕知道了</div></div></div></div>").appendTo($("body"));
+            $(".layer").click(function() {
+                $(".layer").hide();
+            })
+        }
+    </script>
+    <style type="text/css">
+        /*弹出层*/
+        
+        .layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .3);
+            z-index: 3;
+        }
+        
+        .layer_con {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 400px;
+            height: 250px;
+            background: #fff;
+            border: 5px solid rgba(0, 0, 0, .5);
+        }
+        
+        .layer_con_tit {
+            height: 40px;
+            line-height: 40px;
+            color: #fff;
+            background: #ff8a38;
+            text-align: center;
+        }
+        
+        .layer_con_txt {
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        
+        .layer_btn {
+            width: 90px;
+            height: 30px;
+            margin: 0 auto;
+        }
+        
+        .layer_btn div {
+            width: 100%;
+            height: 100%;
+            line-height: 30px;
+            text-align: center;
+            float: left;
+            cursor: pointer;
+            border: 1px solid #dbdbdb;
+            background: #f8f8f8;
+        }
+        
+        .layer_btn .right_btn {
+            border: 1px solid #f3a022;
+            background: #f8f8f8;
+            color: #f3a022;
+        }
+    </style>
+</head>
+
+
+<body>
+    <link href="./../css/header.css" rel="stylesheet" type="text/css">
+    <link href="./../css/cartlist.css" rel="stylesheet" type="text/css">
+
+    <link href="./../css/header.css" rel="stylesheet">
+    <style>
+        #top ul .spacer {
+            width: 1px;
+            height: 12px;
+            padding: 0;
+            margin: 9px 0 0 0;
+            background: #ddd;
+            overflow: hidden;
+        }
+    </style>
+    <div id="top">
+        <div class="top">
+
+            <!-- <li><a href="">客户服务</a></li> -->
+            <!--<li><a href="">网站导航</a></li>-->
+
+            <!--  个人买家 -->
+            <div class="home">
+                <a href="http://www.ryz.com/Enterprise/index/index">
+                    <span id="www-net" style="color: #666;">机施网</span>
+                </a>
+            </div>
+            <ul>
+
+                <li class="spacer"></li>
+                <li><a href="http://www.ryz.com/Enterprise/About/help.html#service2" target="_blank">法律服务</a></li>
+                <li class="spacer"></li>
+                <li><a href="javascript:void(0);">智金融</a></li>
+                <li>
+                    <a href="http://www.ryz.com/Consumer/Intentions/cartlist"><img src="./../images/shopcar.png" style="margin:-5px 5px 0 0" target="_blank">购物车</a>
+                </li>
+                <!--<li><a href="/Consumer/orders/orders"  target="_blank" >订单</a></li>-->
+                <li class="spacer"></li>
+                <li><a href="http://www.ryz.com/Consumer/Personal/subaccount#/Intentions1/lists">意向单</a></li>
+                <li class="spacer"></li>
+                <li><a href="http://www.ryz.com/Consumer/Personal/subaccount">用户中心</a></li>
+                <li class="spacer"></li>
+                <li><a href="http://www.ryz.com/Consumer/Personal/subaccount" target="_blank" class="username">小智<img src="./../images/indexVip.png" height="15" style="margin-left:5px"></a><a href="http://www.ryz.com/Portal/login/logout">退出</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="cart-head">
+        <div class="cart-logo">
+            <a href="http://www.ryz.com/Enterprise/Index/index">
+                <img src="./../images/logo1.png" width="180" height="60" alt="">
+            </a>
+        </div>
+        <div class="cart-name">
+            我的购物车
+        </div>
+        <div class="cart-step">
+            <div class="cart-step1">
+                <div>购物车</div>
+            </div>
+            <div class="cart-step3">
+                <div>确认订单并付款</div>
+            </div>
+            <div class="cart-step4">
+                <div>订单跟踪直至完成</div>
+            </div>
+        </div>
+        <!-- <header>
+		 <div class="search" >
+		    <input type="text" name="searchtext" onkeydown="entersearch()" id="searchtext" value=""  />
+		    <button type="button" onclick="gsearch()">搜 索</button>
+	 	 </div>
+	 	 </header> -->
+    </div>
+    <div class="page-middle">
+        <!--
+		<div class="cartlist-bar">
+			 <div class="cartlist-bar-item" id="select-active">全部商品</div>
+			 <div class="cartlist-price">已选商品 <span id="spantotalprice" >￥0.00</span></div>
+			 <button onclick="form1.submit()" type="button">加入意向单</button>
+		</div>
+		-->
+        <div class="list-item">
+            <div class="checkbox">
+                <label>
+					<input type="checkbox" value="" class="allListChecked" onclick="$(&#39;input[type=checkbox]&#39;).prop(&#39;checked&#39;,$(this).prop(&#39;checked&#39;))">
+						<span>全选</span>
+				</label>
+            </div>
+            <div class="goods-massage-item">商品信息</div>
+            <div class="goods-class-item">商品型号</div>
+            <div class="goods-massage-item1">单价（元）</div>
+            <div class="goods-massage-item2">数量</div>
+            <div class="goods-massage-item3">金额（元）</div>
+            <div class="goods-massage-item4">操作</div>
+        </div>
+        <div class="ShoppingCartList" id="ShoppingCartList">
+            <form id="form1">
+                <!-- <div class="form-goods">
+                    <div class="company_tit" style="width: 1212px;clear: both; padding-top: 10px">
+                        <div class="checkbox" style="margin-left: 20px;">
+                            <label>
+							<input onclick="checkent(3)" id="ent3" name="ent3" type="checkbox" value="ent3">
+						<span>商家：优博林</span>					</label>
+                        </div>
+                        <hr style="width: 1212px;margin-top: 20px;">
+                    </div>
+                    <div class="cartlist-item">
+                        <div class="checkbox">
+                            <label>
+							<input id="good3_133" name="good3_133" type="checkbox" value="good3_133">
+						</label>
+                        </div>
+                        <img class="goods-showimg" src="./../images/nopic_s.png">
+
+                        <div class="goods-name">
+                            <a href="http://www.ryz.com/Enterprise/Detail/show/?id=3&amp;cls=201" target="_blank">优博林-SD-600						</a>
+                        </div>
+                        <div class="goods-detail">
+                            <span>工程机械厂家直销&nbsp;&nbsp;&nbsp;优博林-SD-600						</span>
+                        </div>
+                        <div class="goods-cartprice">
+                            ¥50000000 </div>
+                        <div class="goods-items">
+                            <div class="goods-items-minus" onclick="subamount(133)">-</div>
+                            <input class="goods-items-input" type="text" id="amount133" onchange="changeamount(133)" value="1">
+                            <div class="goods-items-plus" onclick="addamount(133)">+</div>
+                        </div>
+                        <div class="goods-subtotal" id="subtotal133">
+                            ￥50000000 </div>
+                        <div class="goods-del">
+                            <input type="hidden" id="hcartprice133" name="hcartprice133" value="50000000">
+                            <input type="hidden" id="hamount133" name="hamount133" value="1">
+                            <input type="hidden" id="hsubtotal133" name="hsubtotal133" value="50000000">
+                            <a href="javascript:" onclick="deletegood(133)">删除</a>
+                        </div>
+                    </div>
+                </div> -->
+            </form>
+        </div>
+        <div class="fix-money" id="fix-money">
+            <div class="fix-right">
+                <div class="checkbox">
+                    <label>
+						<input type="checkbox" value="" class="allListChecked" onclick="$(&#39;input[type=checkbox]&#39;).prop(&#39;checked&#39;,$(this).prop(&#39;checked&#39;))">
+						<span>全选</span>
+					</label>
+                </div>
+                <div class="goods-delall" onclick="deleteall()">删除选中的商品</div>
+                <div class="goods-selected">已选择<span class="spanamount1" id="spanamount1">0</span>件商品</div>
+                <div class="goods-tolmoy">（当前总价只包括商品价格，不包括可能产生的运费、运保费等。）总价：<span id="spantotalprice3">￥0</span></div>
+                <button id="addIntention" type="button">付款</button>
+            </div>
+        </div>
+        <div class="recommend-good-list">
+            <div class="recommend-bar">
+                <div class="recommend-bar-item" id="select-active">最近浏览过的</div>
+            </div>
+            <div id="recommend-good-list">
+
+            </div>
+            <!-- <div class="detail-head">
+                <div class="detail-body">
+                    <div onclick="window.open(&#39;/Enterprise/Detail/show?id=111&amp;cls=201&#39;,&#39;_blank&#39;)" class="detail-href">
+                        <img src="./../images/123.png" alt="" class="detail-img">
+                        <p class="detail-price">￥0-0<span>&nbsp;元</span></p>
+                        <p class="detail-name">DCY升降型钢厂用运输专用车 </p>
+
+                        <p class="detail-count">有<span>5</span>人已浏览</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="clear"></div>
+
+        </div>
+    </div>
+    <!-- footer区 -->
+    <link href="./../css/footer.css" rel="stylesheet">
+    <footer>
+        <div class="service">
+            <ul class="servicelist">
+                <div>入门</div>
+                <li class="" id="intro-aboutme"><a href="http://www.ryz.com/Enterprise/About/help.html#shopGuide1" target="_blank">机施网简介</a></li>
+                <li class="" id="intro-trade"><a href="http://www.ryz.com/Enterprise/About/help.html#shopGuide2" target="_blank">我是企业卖家</a></li>
+                <li class="" id="intro-shopping"><a href="http://www.ryz.com/Enterprise/About/help.html#shopGuide3" target="_blank">我是企业买家</a></li>
+                <li class="" id="intro-goods"><a href="http://www.ryz.com/Enterprise/About/help.html#shopGuide4" target="_blank">我是个人买家</a></li>
+            </ul>
+            <ul class="servicelist">
+                <div>产品功能介绍</div>
+                <li class="" id="intro-payment"><a href="http://www.ryz.com/Enterprise/About/help.html#intro1" target="_blank">机械施工一体化介绍</a></li>
+                <li class="" id="intro-alipay"><a href="http://www.ryz.com/Enterprise/About/help.html#intro2" target="_blank">厂家直销</a></li>
+                <li class="" id="intro-ebank"><a href="http://www.ryz.com/Enterprise/About/help.html#intro3" target="_blank">投标介绍</a></li>
+            </ul>
+            <ul class="servicelist">
+                <div>支付方式</div>
+                <li class=""><a href="http://www.ryz.com/Enterprise/About/help.html#memberPay1" target="_blank">会员费支付</a></li>
+                <li class=""><a href="http://www.ryz.com/Enterprise/About/help.html#memberPay2" target="_blank">订单支付</a></li>
+            </ul>
+            <ul class="servicelist">
+                <div>售后服务/法律支持</div>
+                <li class=""><a href="http://www.ryz.com/Enterprise/About/help.html#service1" target="_blank">售后服务</a></li>
+                <li class=""><a href="http://www.ryz.com/Enterprise/About/help.html#service2" target="_blank">法律支持</a></li>
+            </ul>
+            <ul class="serviesmap">
+                <div class="serviesmap-num">010-5951-2321</div>
+                <p>周一到周五 9:00-18:00</p>
+                <p>（仅收市话费）</p>
+                <div class="serviesmap-serveis">8小时在线客服</div>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="footcopyright">
+            <div class="links">
+                <div class="links-left">
+                    <p>机施网已向全国2378个区县提供服务支持 , 完善的资金安全 , 法律保障售后上门服务</p>
+
+                    <p>
+                        <a href="http://www.ryz.com/Enterprise/About/help.html#annouce1" target="_blank">著作权与商标声明</a>
+                        <a>|</a>
+                        <a href="http://www.ryz.com/Enterprise/About/help.html#annouce2" target="_blank">法律声明</a>
+                        <a>|</a>
+                        <a href="http://www.ryz.com/Enterprise/About/help.html#annouce3" target="_blank">服务条款</a>
+                        <a>|</a>
+                        <a href="http://www.ryz.com/Enterprise/About/help.html#annouce4" target="_blank">隐私声明</a>
+                        <a>|</a>
+                        <a href="http://www.ryz.com/Enterprise/About/help.html#shopGuide1" target="_blank">关于机施网</a>
+                    </p>
+                    <p>
+                        <a>Copyright  ©  2016机施网  版权所有</a>
+                        <a>京ICP备16004544号-1</a> <a>京ICP证161121号</a>
+                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802021101"><img src="./../images/record.png">京公网安备 11010102002019号 </a>
+                    </p>
+                </div>
+                <!--<ul class="links-right">
+        <li> <a href="http://webscan.360.cn/index/checkwebsite/url/www.jixieshigong.com" target="_blank"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/9ad10f9bb5c71091833f67438a5b1336"/></a> </li>
+      </ul>-->
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="loadingdlg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="text-align:center">
+
+                <div class="modal-body">
+                    <img src="./../images/loading.gif">
+                </div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- 消息框 -->
+    <div class="modal fade" id="dlgmsg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">系统消息</h4>
+                </div>
+                <div class="modal-body" id="divmsgbody" style="text-align:center">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- 确认框 -->
+    <div class="modal fade" id="dlgryzconfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body" id="divryzconfirmbody" style="text-align:center">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="javascript:g_ryz_confirm_rs=true;" data-dismiss="modal">确认</button>
+                    <a id="paynowtoa" href="http://www.ryz.com/consumer/Orders/pay" style="color:#fff;display:none;" class="btn btn-primary" onclick="distate(this)" target="_blank">立即支付</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button style="display:none;" id="confirmsg" data-dismiss="modal"></button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <!-- Button trigger modal -->
+    <button type="button" data-toggle="modal" style="display:none;" class="dlgryzconfirmdd" data-target="#dlgryzconfirmdd"></button>
+    <!-- 确认框 -->
+    <div class="modal fade" id="dlgryzconfirmdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-footer" style="text-align:center;">
+                    <button type="button" class="btn btn-primary" id="paysuccess">支付完成</button>
+                    <a href="http://www.ryz.com/Enterprise/About/help.html#/Enterprise/About/payPayment.html" class="btn btn-default" target="_blank" id="payfail">支付出现问题</a>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+
+
+    <script src="./../js/bootstrap.min.js"></script>
+    <script src="./../js/docs.min.js"></script>
+    <script src="./../js/jquery-ui.min.js"></script>
+    <script src="./../js/json2.js"></script>
+    <script src="./../js/machstruct.js"></script>
+    <script src="./../js/common.js"></script>
+    <script language="javascript">
+        var interfaceObj = {
+            getcart: "http://39.108.191.122/Consumer/Carts/getcart", //查询购物车
+            delcart: "http://39.108.191.122/Consumer/Carts/delcart", //删除购物车
+            lately: "http://39.108.191.122/API/Products/lately", //最近浏览
+            addcount: "http://39.108.191.122/Consumer/Carts/addcount", //购物车数量加一减一 type（1增加，2减少）
+            doalipay: "http://39.108.191.122/API/Pay/doalipay"
+        }
+        var funObj = {
+            inits: function() {
+                this.initAjaxFun();
+            },
+            initAjaxFun: function() {
+                common.ajaxFun(interfaceObj.getcart, "GET", {}, function(res) {
+                    funObj.ShoppingCarListFun(res);
+                })
+                common.ajaxFun(interfaceObj.lately, "GET", {}, function(res) {
+                    funObj.latelyListFun(res);
+                })
+            },
+            ShoppingCarListFun: function(res) {
+                if (res.status == 1) {
+                    var str = "";
+                    $.each(res.data, function(fi, fv) {
+                        str += '<div class="form-goods">'
+                        str += ' <div class="company_tit" style="width: 1212px;clear: both; padding-top: 10px">'
+                        str += '<div class="checkbox" style="margin-left: 20px;">'
+                        str += '<label>'
+                        str += ' <input onclick="checkent(' + fv.entid + ')" id="ent' + fv.entid + '" name="ent' + fv.entid + '" type="checkbox" value="ent' + fv.entid + '">'
+                        str += '<span>商家：' + fi + '</span>'
+                        str += '</label>'
+                        str += '</div>'
+                        str += ' <hr style="width: 1212px;margin-top: 20px;">'
+                        str += '</div>'
+                        $.each(fv.dingdan, function(si, sv) {
+                            str += '<div class="cartlist-item">'
+                            str += '<div class="checkbox">'
+                            str += '<label>'
+                            str += '<input id="good' + fv.entid + '_' + sv.cartid + '" name="good' + fv.entid + '_' + sv.cartid + '" type="checkbox" value="good' + fv.entid + '_' + sv.cartid + '">'
+                            str += ' </label>'
+                            str += '</div>'
+                            str += '<a href="' + sv.pdturl + '" target="_blank"><img class="goods-showimg" src="' + sv.images_Show + '"></a>'
+                            str += '<div class="goods-name">'
+                            str += '<a href="' + sv.enrurl + '" target="_blank">' + sv.entname + '</a>'
+                            str += ' </div>'
+                            str += '<div class="goods-detail">'
+                            str += '  <span>' + sv.name_Chn + '</span>'
+                            str += '</div>'
+                            str += ' <div class="goods-cartprice">¥' + sv.price + ' </div>'
+                            str += '<div class="goods-items">'
+                            str += '<div class="goods-items-minus" onclick="subamount(' + sv.cartid + ')">-</div>'
+                            str += '<input class="goods-items-input" type="text" id="amount' + sv.cartid + '" onchange="changeamount(' + sv.cartid + ')" value="' + sv.count + '">'
+                            str += '<div class="goods-items-plus" onclick="addamount(' + sv.cartid + ')">+</div>'
+                            str += '</div>'
+                            str += '<div class="goods-subtotal" id="subtotal' + sv.cartid + '">￥' + (sv.price * sv.count) + ' </div>'
+                            str += '<div class="goods-del">'
+                            str += '<input type="hidden" id="hcartprice' + sv.cartid + '" name="hcartprice' + sv.cartid + '" value="' + sv.price + '">'
+                            str += '<input type="hidden" id="hamount' + sv.cartid + '" name="hamount' + sv.cartid + '" value="' + sv.count + '">'
+                            str += '<input type="hidden" id="hsubtotal' + sv.cartid + '" name="hsubtotal' + sv.cartid + '" value="' + sv.price + '">'
+                            str += '<a href="javascript:" onclick="deletegood(' + sv.cartid + ',this)">删除</a>'
+                            str += ' </div>'
+                            str += ' </div>'
+                        })
+                        str += ' </div>'
+                    })
+                    $("#ShoppingCartList").html($(str));
+                    $("input[type=checkbox]").click(function() {
+                        calccart();
+                    });
+                } else {
+                    alert("查询购物车接口返回－1啦");
+                }
+            },
+            latelyListFun: function(res) {
+                console.log(res)
+                var str = "";
+                if (res.status == 1) {
+                    $.each(res.data, function(i, v) {
+                        str += '<div class="detail-head">'
+                        str += '<div class="detail-body">'
+                        str += '<div onclick="window.open(' + v.purl + ')" class="detail-href">'
+                        str += ' <img src="' + v.images + '" alt="" class="detail-img">'
+                        str += ' <p class="detail-price">￥' + v.price + '<span>&nbsp;元</span></p>'
+                        str += '<p class="detail-name">' + v.name + '</p>'
+                        str += '<p class="detail-count">有<span>' + v.count + '</span>人已浏览</p>'
+                        str += '</div>'
+                        str += '</div>'
+                        str += '</div>'
+                    });
+                    $("#recommend-good-list").html($(str));
+                } else if (res.status == -1) {
+                    alert("最近浏览器接口返回－1啦")
+                }
+
+            }
+        }
+        funObj.inits();
+        $(function() {
+            calccart();
+            $("input[type=checkbox]").click(function() {
+                calccart();
+            });
+        });
+
+        function calccart() {
+            amount = 0;
+            totalprice = 0;
+            divtotalprice = 0;
+            $("input[type=checkbox][name^=good]").each(function() {
+                tmp = $(this).val();
+                id = tmp.substring(tmp.indexOf('_') + 1);
+                if ($(this).prop("checked")) {
+                    totalprice += $('#hcartprice' + id).val().split('-')[0] * $('#hamount' + id).val();
+                    amount++;
+                }
+                divtotalprice += $('#hcartprice' + id).val().split('-')[0] * $('#hamount' + id).val();
+            });
+            $('#spanamount').html(amount);
+            $('#spanamount1').html(amount);
+
+            $('#spantotalprice').html('￥' + totalprice);
+            $('#spantotalprice2').html('￥' + totalprice);
+            $('#spantotalprice3').html('￥' + totalprice);
+
+            $('#divtotalprice').html('￥' + divtotalprice);
+        }
+
+        function deletegood(id, ths) {
+            var that = $(ths);
+
+            console.log(that.parents(".form-goods").length)
+
+            ryzsysconfirm("确认删除此购物车项？", function(rs) {
+                common.ajaxFun(interfaceObj.delcart, "GET", {
+                    cartid: id
+                }, function(res) {
+                    if (res.status == 1) {
+                        if (that.parents(".form-goods").find(".cartlist-item").length == 1) {
+                            that.parents(".form-goods").remove();
+                        } else if (that.parents(".form-goods").find(".cartlist-item").length > 1) {
+                            that.parents(".cartlist-item").remove();
+                        }
+                    } else {
+                        alert("删除接口返回－1啦");
+                    }
+                    console.log(res)
+                })
+            });
+        }
+
+
+        function deleteall() { //多个删除
+            ryzsysconfirm("确认删除选中购物车商品？", function(rs) {
+                if (rs) {
+                    ids = "";
+                    $("input[type=checkbox][name^='good']:checked").each(function(i) {
+                        tmp = $(this).val();
+                        ids += tmp.substring(tmp.indexOf('_') + 1) + ",";
+
+                    });
+                    if (ids.length > 0) {
+                        ids = ids.substring(0, ids.length - 1);
+                        common.ajaxFun(interfaceObj.delcart, "GET", {
+                            cartid: ids
+                        }, function(res) {
+                            if (res.status == 1) {
+                                $("input[type=checkbox][name^='good']:checked").each(function(i) {
+                                    if ($(this).parents(".form-goods").find(".cartlist-item").length == 1) {
+                                        $(this).parents(".form-goods").remove();
+                                    } else if ($(this).parents(".form-goods").find(".cartlist-item").length > 1) {
+                                        $(this).parents(".cartlist-item").remove();
+                                    }
+                                });
+
+                            } else {
+                                alert("多删接口返回－1啦！");
+                            }
+                        });
+                    } else {
+                        ryzsysmsg("请选择需要删除商品。");
+                    }
+                }
+            });
+        }
+
+        function addamount(id) {
+            amount = $('#amount' + id).val() * 1 + 1;
+            var addcountObj = {
+                cartid: id,
+                type: 1
+            }
+            common.ajaxFun(interfaceObj.addcount, "GET", addcountObj, function(res) {
+                if (res.status == 1) {
+                    amountchange(amount, id);
+                } else if (res.status == -1) {
+                    alert("加一接口返回－1啦")
+                        // layer('操作失败');
+                }
+            })
+        }
+
+        function subamount(id) {
+            if ($('#amount' + id).val() > 1) {
+                amount = $('#amount' + id).val() * 1 - 1;
+                var addcountObj = {
+                    cartid: id,
+                    type: 2
+                }
+                common.ajaxFun(interfaceObj.addcount, "GET", addcountObj, function(res) {
+                    if (res.status == 1) {
+                        amountchange(amount, id);
+                    } else if (res.status == -1) {
+                        alert("减一接口返回－1啦")
+                            // layer('操作失败');
+                    }
+                })
+            }
+        }
+
+        function changeamount(id) {
+            amount = $('#amount' + id).val();
+            amountchange(amount, id);
+        }
+
+        function amountchange(amount, id) {
+            $('#amount' + id).val(amount);
+            var cartPrice = $('#hcartprice' + id).val().split('-')[0];
+            subtotal = amount * cartPrice;
+            $('#subtotal' + id).html('￥' + subtotal);
+            $('#hsubtotal' + id).val(subtotal);
+            $('#hamount' + id).val(amount);
+            calccart();
+        }
+
+        function checkent(k) {
+            $("input[type=checkbox][name^='good" + k + "_']").prop("checked", $('#ent' + k).prop("checked"));
+        }
+
+        //付款
+        $("#addIntention").click(function() {
+            var carList = $("input[type='checkbox']:checked").length;
+            if (carList == 0) {
+                layer('请选择商品');
+            } else {
+                var ids = "";
+                $("input[type=checkbox][name^='good']:checked").each(function(i) {
+                    ids += tmp.substring(tmp.indexOf('_') + 1) + ",";
+                });
+                common.ajaxFun(interfaceObj.doalipay, "GET", {
+                    cartid: ids
+                }, function(res) {
+                    if (res.status == 1) {
+                        alert("付款成功！");
+                    }
+                });
+            }
+        })
+        noAll()
+
+        function noAll() {
+            $("#ShoppingCartList").on("change", "input:checkbox", function() {
+                if ($(this).is(':checked') == false) {
+                    $('.allListChecked').attr('checked', false);
+                }
+            })
+        }
+    </script>
+    <script language="javascript">
+        $("#paysuccess").click(function() {
+            location.reload();
+        })
+        $("#payfail").click(function() {
+            location.reload();
+        })
+
+        function ryzsysmsg(msg) {
+            var tmp = msg.replace(/\n/g, "<br />");
+            $('#divmsgbody').html(tmp);
+            $('#dlgmsg').modal();
+        }
+
+        function distate(obj) {
+            // $("#distate").css("display","block");
+            $("#confirmsg").click();
+            $(".dlgryzconfirmdd").click();
+            $("body").css("padding", "0px");
+        }
+
+        function checklogin() {
+            var rs;
+            $.ajax({
+                url: "/Portal/Common/ajaxchecklogin",
+                async: false,
+                type: "GET",
+                success: function(data) {
+                    rs = data;
+                }
+            });
+            return rs;
+        }
+
+        var g_ryz_confirm_rs = false;
+        var g_ryz_confirm_func = null;
+
+        function ryzsysconfirm(msg, func) {
+            g_ryz_confirm_rs = false;
+            g_ryz_confirm_func = null;
+            if (msg.indexOf('paytable')) {
+                var tmp = msg;
+            } else {
+                var tmp = msg.replace(/\n/g, "<br />");
+            }
+            $('#divryzconfirmbody').html(tmp);
+            $('#dlgryzconfirm').modal({
+                backdrop: 'static'
+            });
+
+            g_ryz_confirm_func = func;
+        }
+        $('#dlgryzconfirm').on('hidden.bs.modal', function() {
+            if (typeof(g_ryz_confirm_func) === "function") g_ryz_confirm_func(g_ryz_confirm_rs);
+        });
+    </script>
+    <div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 15px; height: 15px; z-index: 999999999;"> <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="../../../../Public/images/flash/ZeroClipboard.swf?noCache=1506330904979">         <param name="allowScriptAccess" value="sameDomain">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedOrigins=www.ryz.com%2C%2F%2Fwww.ryz.com%2Chttp%3A%2F%2Fwww.ryz.com">         <embed src="../../../../Public/images/flash/ZeroClipboard.swf?noCache=1506330904979" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="100%" height="100%" name="global-zeroclipboard-flash-bridge" allowscriptaccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedOrigins=www.ryz.com%2C%2F%2Fwww.ryz.com%2Chttp%3A%2F%2Fwww.ryz.com" scale="exactfit">                </object></div>
+</body>
+
+</html>

@@ -463,7 +463,45 @@ img.authenticationLogo {
 
 .comment span {
     color: #666666;
-    padding-left: 10px;
+    padding-left: 0px;
+}
+
+.comment .stateBox {
+    float: right;
+    cursor: pointer;
+    text-align: right;
+    position: relative;
+}
+
+.comment .stateBox:hover .state {
+    display: block;
+}
+
+.comment .stateBox .state {
+    display: none;
+    width: 200px;
+    text-align: right;
+    color: #FF8A38;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    bottom: 40px;
+    border-radius: 4px;
+    border: 1px solid #DDDDDD;
+    background: #fff;
+    padding: 5px;
+}
+
+.comment .stateBox .state span {
+    display: block;
+    float: left;
+    text-align: left;
+    color: #FF8A38;
+    width: 80px;
+}
+
+.comment .stateBox .state em {
+    text-align: right;
 }
 
 .everyCollection {
@@ -626,6 +664,10 @@ img.authenticationLogo {
 
 .OrderList .everyList {
     margin-bottom: 20px;
+}
+
+.OrderList .everyList:last-child {
+    margin-bottom: 0;
 }
 
 .settingMain {
@@ -1073,4 +1115,16 @@ input.loginBtn {
 
 .collectionList .goodsInfor div.goodsImg {
     width: 80px;
+}
+
+.reviseinfor p.goEmail {
+    padding-top: 0;
+    color: #FF5F5A;
+}
+
+.noContent {
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    color: #FF8A38;
 }

@@ -142,7 +142,7 @@ footer {
 
 .cart-head {
     height: 100px;
-    width: 1010px;
+    width: 1212px;
     margin: 0px auto;
 }
 
@@ -249,7 +249,7 @@ footer {
 }
 
 .cartlist-bar {
-    width: 1010px;
+    width: 1212px;
     height: 50px;
     display: inline-block;
     float: left;
@@ -316,7 +316,7 @@ footer {
 .form-goods {
     height: auto;
     padding-bottom: 20px;
-    width: 1010px;
+    width: 1212px;
 }
 
 .form-goods .company_tit label {
@@ -330,7 +330,7 @@ footer {
 
 .cartlist-item {
     clear: both;
-    width: 1010px;
+    width: 1212px;
     border-bottom: 1px solid #ededed;
     height: 140px;
 }
@@ -377,7 +377,7 @@ footer {
 .goods-name {
     margin-left: 20px;
     float: left;
-    width: 200px;
+    width: 230px;
     overflow: hidden;
     display: inline-block;
     height: 140px;
@@ -385,7 +385,7 @@ footer {
 }
 
 .goods-detail {
-    width: 180px;
+    width: 210px;
     height: 138px;
     /*margin-left: 50px;*/
     float: left;
@@ -412,7 +412,7 @@ footer {
 }*/
 
 .goods-cartprice {
-    width: 80px;
+    width: 160px;
     height: auto;
     float: left;
     display: inline-block;
@@ -421,12 +421,12 @@ footer {
 }
 
 .goods-items {
-    width: 103px;
+    width: 133px;
     height: 30px;
     float: left;
     display: inline-block;
     margin-top: 60px;
-    padding-left: 40px;
+    padding-left: 30px;
 }
 
 .goods-items-minus {
@@ -462,7 +462,7 @@ footer {
 }
 
 .goods-subtotal {
-    width: 100px;
+    width: 140px;
     height: auto;
     float: left;
     margin-top: 60px;
@@ -471,7 +471,7 @@ footer {
 }
 
 .goods-del {
-    width: 120px;
+    width: 140px;
     height: auto;
     float: left;
     margin-top: 60px;
@@ -479,7 +479,7 @@ footer {
 }
 
 .recommend-bar {
-    width: 1010px;
+    width: 1212px;
     height: 50px;
     display: inline-block;
     float: left;
@@ -496,18 +496,14 @@ footer {
 }
 
 .list-item {
-    width: 1010px;
+    width: 1212px;
     height: 50px;
     display: inline-block;
     float: left;
     text-align: center;
     vertical-align: middle;
-    background: #fff;
-    position: absolute;
-}
-
-.ShoppingCartList {
-    padding-top: 50px;
+    margin-top: 5px;
+    background: #f8f8f8
 }
 
 .list-item .checkbox {
@@ -515,11 +511,10 @@ footer {
     float: left;
     line-height: 1;
     margin-top: 15px;
-    width: 70px;
 }
 
 .goods-massage-item {
-    width: 260px;
+    width: 300px;
     height: 50px;
     line-height: 50px;
     display: inline-block;
@@ -527,22 +522,23 @@ footer {
 }
 
 .goods-class-item {
-    width: 190px;
+    width: 240px;
     height: 50px;
     line-height: 50px;
     float: left;
 }
 
 .goods-massage-item1 {
-    width: 110px;
+    width: 140px;
     height: 50px;
     line-height: 50px;
     display: inline-block;
     float: left;
+    margin-left: 15px;
 }
 
 .goods-massage-item2 {
-    width: 110px;
+    width: 140px;
     height: 50px;
     line-height: 50px;
     display: inline-block;
@@ -550,7 +546,7 @@ footer {
 }
 
 .goods-massage-item3 {
-    width: 110px;
+    width: 140px;
     height: 50px;
     line-height: 50px;
     display: inline-block;
@@ -558,7 +554,7 @@ footer {
 }
 
 .goods-massage-item4 {
-    width: 110px;
+    width: 140px;
     height: 50px;
     line-height: 50px;
     display: inline-block;
@@ -578,7 +574,7 @@ footer {
 }
 
 .detail-wear {
-    width: 1010px;
+    width: 1212px;
     min-height: 700px;
     margin: 0px auto;
     margin-top: 20px;
@@ -674,7 +670,7 @@ footer {
 /*浮动条*/
 
 .fix-money {
-    width: 1010px;
+    width: 1212px;
     height: 50px;
     position: fixed;
     box-shadow: 0px -3px 3px #F0F0F0;
@@ -688,7 +684,7 @@ footer {
 
 .fix-right {
     clear: both;
-    width: 1010px;
+    width: 1212px;
     height: 50px;
     float: right;
 }
@@ -696,12 +692,6 @@ footer {
 .fix-right .checkbox {
     margin-left: 20px;
     float: left;
-    margin-top: 11px;
-    cursor: pointer;
-}
-
-.fix-right .checkbox .allListChecked {
-    margin-top: 2px;
 }
 
 .fix-right button:hover {
@@ -721,7 +711,7 @@ footer {
 .goods-selected {
     margin-top: 11px;
     float: left;
-    margin-left: 50px;
+    margin-left: 100px;
 }
 
 .spanamount1 {
@@ -758,7 +748,7 @@ footer {
     color: #fff;
     text-align: center;
     margin-top: -8px;
-    margin-right: 10px;
+    margin-right: -10px;
     padding-bottom: 13px;
 }
 
@@ -805,11 +795,9 @@ footer {
 }
 
 .page-middle {
-    width: 1010px;
+    width: 1212px;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 80px;
-    background: #fff;
 }
 
 
@@ -826,7 +814,7 @@ footer {
 }
 
 .compute {
-    width: 1010px;
+    width: 1212px;
     margin: 0px auto;
 }
 
@@ -935,7 +923,7 @@ footer {
 }
 
 .compute-head {
-    width: 1010px;
+    width: 1212px;
     height: 50px;
     border-bottom: 3px solid #cccccc;
 }
@@ -962,7 +950,7 @@ footer {
 /*新样式8.25*/
 
 .cart-container {
-    width: 1010px;
+    width: 1212px;
     margin: 0 auto;
 }
 

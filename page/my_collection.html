@@ -10,42 +10,45 @@
     <link rel="stylesheet" href="./../css/style.css">
     <link rel="stylesheet" href="./../css/laypage.css">
 </head>
-<div class="nav">
-    <div class="leftgroup">
-        <div class="logo" id="logo">
-            <a href="./index.html"></a>
-        </div>
-        <div class="telescopic shrink" id="telescopic"><img src="./../images/zd.png" alt=""></div>
-    </div>
-    <div class="rightgroup">
-        <ul>
-            <li class="name"><a href="">旭阳科技</a></li>
-            <li class="intentionOrder"><a href="">意向单</a></li>
-            <li class="legalService"><a href="">法律服务</a></li>
-            <li class="quit"><a href="">退出</a></li>
-        </ul>
-        <div class="namePic"><img alt=""></div>
-    </div>
-</div>
-<div class="main">
-    <div class="container">
-        <div class="rightMain" id="rightMain">
-            <div class="projectType" id="projectType">
-                <ul>
-                    <li data_type="000">全部类型</li>
-                    <li data_type="101">机械施工一体化</li>
-                    <li data_type="201">工程机械厂家</li>
-                    <li data_type="301">工程机械租赁</li>
-                    <li data_type="401">工程机械配件</li>
 
-                </ul>
-                <div class="searchBox">
-                    <div class="searchBtn"></div>
-                    <input type="text" placeholder="搜索" class="searchInput">
-                </div>
+<body>
+    <div class="nav">
+        <div class="leftgroup">
+            <div class="logo" id="logo">
+                <a href="./index.html"></a>
             </div>
-            <div class="OrderList collectionList" id="collectionList">
-                <!-- <div class="everyList">
+            <div class="telescopic shrink" id="telescopic"><img src="./../images/zd.png" alt=""></div>
+        </div>
+        <div class="rightgroup">
+            <ul>
+                <li class="name"><a href="">旭阳科技</a></li>
+                <li class="intentionOrder"><a href="">意向单</a></li>
+                <li class="legalService"><a href="">法律服务</a></li>
+                <li class="quit" id="quit"><a href="javascript:void(0);">退出</a></li>
+            </ul>
+            <div class="namePic"><img alt=""></div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="rightMain" id="rightMain">
+                <div class="projectType" id="projectType">
+                    <ul>
+                        <li data_type="000">全部类型</li>
+                        <li data_type="101">机械施工一体化</li>
+                        <li data_type="201">工程机械厂家</li>
+                        <li data_type="301">工程机械租赁</li>
+                        <li data_type="401">工程机械配件</li>
+
+                    </ul>
+                    <div class="searchBox">
+                        <div class="searchBtn"></div>
+                        <input type="text" placeholder="搜索" class="searchInput">
+                    </div>
+                </div>
+                <div class="OrderList collectionList" id="collectionList">
+
+                    <!-- <div class="everyList">
                     <div class="topInfor">
                         <div class="firstInfor fl">
                             <div class="times fl">2017-08-24 12:00:00</div>
@@ -63,49 +66,49 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
-            <div style="height:32px;margin-bottom:0px;background: #f6f6f6;"></div>
-            <div class="pageBox">
-                <div id="page"></div>
+                </div>
+                <div style="height:32px;margin-bottom:0px;background: #f6f6f6;"></div>
+                <div class="pageBox">
+                    <div id="page"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="leftMenu" id="leftMenu">
-        <ul>
-            <li class="UserCenter">
-                <span><img src="./../images/center.png" alt=""></span>
-                <a href="./index.html">用户中心首页</a>
-            </li>
-            <li class="myIntentionOrder">
-                <span><img src="./../images/IntentionOrder.png" alt=""></span>
-                <a href="./my_intention_order.html?type=000&status=3">我的意向单</a>
-            </li>
-            <li class="myOrder">
-                <span><img src="./../images/order.png" alt=""></span>
-                <a href="./my_order.html">我的订单</a>
-            </li>
-            <li class="myShoppingCart">
-                <span><img src="./../images/ShoppingCart.png" alt=""></span>
-                <a href="./my_shopping_cart.html">我的购物车</a>
-            </li>
-            <li class="myCollection active">
-                <span><img src="./../images/Collection.png" alt=""></span>
-                <a href="./my_collection.html?type=000">我的收藏</a>
-            </li>
-            <li class="customerService">
-                <span><img src="./../images/customer.png" alt=""></span>
-                <a href="">客户服务</a>
-            </li>
-            <li class="userSettings">
-                <span><img src="./../images/setting.png" alt=""></span>
-                <a href="./user_settings.html">用户设置</a>
-            </li>
-        </ul>
+        <div class="leftMenu" id="leftMenu">
+            <ul>
+                <li class="UserCenter">
+                    <span><img src="./../images/center.png" alt=""></span>
+                    <a href="./index.html">用户中心首页</a>
+                </li>
+                <li class="myIntentionOrder">
+                    <span><img src="./../images/IntentionOrder.png" alt=""></span>
+                    <a href="./my_intention_order.html?type=000&status=3">我的意向单</a>
+                </li>
+                <li class="myOrder">
+                    <span><img src="./../images/order.png" alt=""></span>
+                    <a href="./my_order.html?status=0">我的订单</a>
+                </li>
+                <li class="myShoppingCart">
+                    <span><img src="./../images/ShoppingCart.png" alt=""></span>
+                    <a href="./my_shopping_cart.html">我的购物车</a>
+                </li>
+                <li class="myCollection active">
+                    <span><img src="./../images/Collection.png" alt=""></span>
+                    <a href="./my_collection.html?type=000">我的收藏</a>
+                </li>
+                <li class="customerService">
+                    <span><img src="./../images/customer.png" alt=""></span>
+                    <a href="">客户服务</a>
+                </li>
+                <li class="userSettings">
+                    <span><img src="./../images/setting.png" alt=""></span>
+                    <a href="./user_settings.html">用户设置</a>
+                </li>
+            </ul>
+        </div>
+
     </div>
 
-</div>
 
-<body>
     <script src="./../js/jquery.min.js"></script>
     <script src="./../js/common.js"></script>
     <script src="./../js/laypage.js"></script>
@@ -145,6 +148,7 @@
                     var title = 'Hello World';
                     var url = '?type=' + getFavoritesObj.type;
                     history.pushState(state, title, url);
+
                 });
             },
             getFavoritesStrFun: function(getFavoritesObj) {
@@ -154,6 +158,9 @@
                         common.laypageFun(res.count, getFavoritesObj, funObj.InterfaceObj.getFavorites, 1);
                     } else if (res.status == -1) {
                         alert("收藏接口出错了！")
+                    } else if (res.status == -2) {
+                        var str = '<div class="noContent" id="noContent">没有相关产品</div>';
+                        $("#collectionList").html($(str));
                     }
                 })
             },

@@ -9,246 +9,254 @@
     <link rel="stylesheet" href="./../css/common.css">
     <link rel="stylesheet" href="./../css/style.css">
 </head>
-<div class="nav">
-    <div class="leftgroup">
-        <div class="logo" id="logo">
-            <a href="./index.html"></a>
-        </div>
-        <div class="telescopic shrink" id="telescopic"><img src="./../images/zd.png" alt=""></div>
-    </div>
-    <div class="rightgroup">
-        <ul>
-            <li class="name" id="topname"><a href="">旭阳科技</a></li>
-            <li class="intentionOrder"><a href="">意向单</a></li>
-            <li class="legalService"><a href="">法律服务</a></li>
-            <li class="quit"><a href="">退出</a></li>
-        </ul>
-        <div class="namePic"><img alt=""></div>
-    </div>
-</div>
-<div class="main">
-    <div class="container">
-        <div class="rightMain" id="rightMain">
-            <div class="projectType" id="changeSetting" style="height:65px;">
-                <ul>
-                    <li>企业资料</li>
-                    <li class="active">安全设置</li>
-                </ul>
-            </div>
-            <div class="settingMain" id="settingMain">
-                <div class="securityBox">
-                    <div class="reviseinfor revisePwd">
-                        <p>修改密码</p>
-                        <div class="revisePwdBtn">修改密码</div>
-                        <div class="inputBox none">
-                            <iframe name="ajaxFrame1" id="ajaxFrame1" style="display: none;"></iframe>
-                            <form target="ajaxFrame1" action="http://39.108.191.122/Portal/User/chanpass">
-                                <ul>
-                                    <li><input type="password" class="pass" id="pass" placeholder="请输入旧密码" required="required"></li>
-                                    <li><input type="password" class="password" id="password" placeholder="请输入新密码" required="required"></li>
-                                    <li>
-                                        <input type="password" class="password2" id="password1" placeholder="再次输入新密码" required="required">
-                                        <!-- <div class="change">修改</div> -->
-                                        <input type="submit" value="修改" id="chanpassBtn" class="inputBtn">
-                                        <div class="cancel">取消</div>
-                                    </li>
-                                </ul>
-                            </form>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="reviseinfor reviseTel">
-                        <p>手机绑定</p>
-                        <div class="oldNum none" id="oldNum"></div>
-                        <div class="revisePwdBtn none">更改绑定</div>
-                        <div class="inputBox">
-                            <iframe name="ajaxFrame2" id="ajaxFrame2" style="display: none;"></iframe>
-                            <form target="ajaxFrame2" enctype="multipart/form-data" action="http://39.108.191.122/Portal/User/checksmscodes" id="ajaxFrame2From">
-                                <ul>
-                                    <li>
-                                        <input type="text" class="pass" placeholder="请输入旧手机号" id="oldtel" required="required" pattern="^1[345678][0-9]{9}$" maxlength="11">
-                                        <input type="button" class="codeBtn" id="codeTelBtn" value="获取验证码">
-                                        <input type="hidden" id="smsid">
-                                    </li>
-                                    <li>
-                                        <input type="text" class="password" placeholder="请输入新手机号" id="newtel" required="required" pattern="^1[345678][0-9]{9}$" maxlength="11">
-
-                                    </li>
-                                    <li>
-                                        <input type="text" class="password2" placeholder="输入验证码" id="smscode" required="required">
-                                        <input type="submit" class="change" id="changetelBtn" value="修改">
-                                        <div class="cancel">取消</div>
-                                    </li>
-                                </ul>
-                            </form>
-
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="reviseinfor reviseEmail">
-                        <p>邮箱绑定</p>
-                        <div class="oldNum none" id="oldEmail">13232323223@163.com</div>
-                        <div class="revisePwdBtn none">更改绑定</div>
-                        <div class="inputBox">
-                            <iframe name="ajaxEmial" id="ajaxEmial" style="display: none;"></iframe>
-                            <form target="ajaxEmial" enctype="multipart/form-data" action="http://39.108.191.122/Portal/User/send" id="ajaxEmialFrom">
-                                <ul>
-                                    <!-- <li><input type="password" class="pass" placeholder="请输入邮箱"></li> -->
-                                    <li>
-                                        <input type="email" class="password" id="emailVal" placeholder="请输入邮箱" required="required">
-                                        <div class="codeBtn" id="codeEmailBtn">获取验证码</div>
-                                    </li>
-                                    <li>
-                                        <input type="text" class="password2" id="emailCode" placeholder="请输入验证码" required="required">
-                                        <input type="submit" class="change" id="changeEmailBtn" value="修改">
-                                        <div class="cancel">取消</div>
-                                    </li>
-                                </ul>
-                            </form>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="reviseinfor revisePic">
-                        <p>实名认证</p>
-                        <div class="qualifications">
-                            <div class="qualificationsImg">
-                                <img src="./../images/qualificationsBigImg.jpg" alt="">
-                                <div class="closeImg"></div>
-                            </div>
-                            <div class="uploadImg"><input type="file" id="uploadImg"><label for="uploadImg"></label></div>
-                        </div>
-                        <div class="warning">*上传企业资质或身份证件（最多上传5张）</div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-                <div class="enterpriseInforBox none">
-                    <div class="reviseinfor reviseUsername">
-                        <p>更改名称</p>
-                        <div class="userName" id="userName"></div>
-                        <div class="revisePwdBtn">更改名称</div>
-                        <div class="inputBox none">
-                            <iframe name="ajaxFrame2" id="ajaxFrame2" style="display: none;"></iframe>
-                            <form target="ajaxFrame2" action="http://39.108.191.122/Portal/User/askusers" id="ajaxFrame2From">
-                                <ul>
-                                    <li>
-                                        <input type="text" class="changeuserName" id="changeuserName" required="required" value="">
-                                        <!-- <div class="change">修改</div> -->
-                                        <input type="submit" value="修改" id="changeNameBtn" class="inputBtn">
-                                        <div class="cancel">取消</div>
-                                    </li>
-                                </ul>
-                            </form>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="reviseinfor reviseLogo">
-                        <p>更改logo</p>
-                        <div class="qualifications" id="peoplequalifications">
-                            <div class="qualificationsImg" id="peoplequalificationsImg">
-                                <img src="./../images/123.png" alt="">
-                                <div class="closeImg"></div>
-                            </div>
-                            <div class="uploadImg none" id="peopleUploadImg"><input type="file" id="uploadImgLogo" name="uploadImgLogo"><label for="uploadImgLogo"></label></div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="reviseinfor addAdress" id="addAdress">
-                        <div class="evaryAdress">
-                            <p>地址管理</p>
-                            <div class="detailedAdressBox fl" id="detailedAdressBox">
-
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                        <iframe name="addAdressgroup" id="" style="display: none;"></iframe>
-                        <form target="addAdressgroup" action="http://39.108.191.122/Portal/User/addadress" id="">
-                            <div class="addAdressgroup" id="addAdressgroup">
-                                <div class="selects">
-                                    <select name="省" id="province" class="province" required="required">
-                                </select>
-                                </div>
-                                <div class="selects">
-                                    <select name="省" id="city" class="city" required="required">
-                                    <option value="">请选择</option>
-                                </select>
-                                </div>
-                                <div class="selects">
-                                    <select name="省" id="county" class="county" required="required">
-                                    <option value="">请选择</option>
-                                </select>
-                                </div>
-                                <div class="inputBox">
-                                    <ul>
-                                        <li>
-                                            <input type="text" class="changeuserName" id="detailAdressInput" placeholder="请输入详细地址" required="required">
-                                            <input class="change" id="addAdressBtn" type="submit" value="新增">
-                                            <div class="cancelAddress">取消</div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="leftMenu" id="leftMenu">
-        <ul>
-            <li class="UserCenter">
-                <span><img src="./../images/center.png" alt=""></span>
-                <a href="./index.html">用户中心首页</a>
-            </li>
-            <li class="myIntentionOrder">
-                <span><img src="./../images/IntentionOrder.png" alt=""></span>
-                <a href="./my_intention_order.html?type=000&status=3">我的意向单</a>
-            </li>
-            <li class="myOrder">
-                <span><img src="./../images/order.png" alt=""></span>
-                <a href="./my_order.html">我的订单</a>
-            </li>
-            <li class="myShoppingCart">
-                <span><img src="./../images/ShoppingCart.png" alt=""></span>
-                <a href="./my_shopping_cart.html">我的购物车</a>
-            </li>
-            <li class="myCollection">
-                <span><img src="./../images/Collection.png" alt=""></span>
-                <a href="./my_collection.html?type=000">我的收藏</a>
-            </li>
-            <li class="customerService">
-                <span><img src="./../images/customer.png" alt=""></span>
-                <a href="">客户服务</a>
-            </li>
-            <li class="userSettings active">
-                <span><img src="./../images/setting.png" alt=""></span>
-                <a href="./user_settings.html">用户设置</a>
-            </li>
-        </ul>
-    </div>
-
-</div>
-<div class="qualificationsBigImg none" id="qualificationsBigImg">
-    <div class="closeBigImg" id="closeBigImg"><img src="./../images/icon_close.png" alt=""></div>
-    <div class="BigImg" id="BigImg"><img src="./../images/qualificationsBigImg.jpg" alt=""></div>
-</div>
 
 <body>
+    <div class="nav">
+        <div class="leftgroup">
+            <div class="logo" id="logo">
+                <a href="./index.html"></a>
+            </div>
+            <div class="telescopic shrink" id="telescopic"><img src="./../images/zd.png" alt=""></div>
+        </div>
+        <div class="rightgroup">
+            <ul>
+                <li class="name" id="topname"><a href="">旭阳科技</a></li>
+                <li class="intentionOrder"><a href="">意向单</a></li>
+                <li class="legalService"><a href="">法律服务</a></li>
+                <li class="quit" id="quit"><a href="javascript:void(0);">退出</a></li>
+            </ul>
+            <div class="namePic"><img alt=""></div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="rightMain" id="rightMain">
+                <div class="projectType" id="changeSetting" style="height:65px;">
+                    <ul>
+                        <li>企业资料</li>
+                        <li class="active">安全设置</li>
+                    </ul>
+                </div>
+                <div class="settingMain" id="settingMain">
+                    <div class="securityBox">
+                        <div class="reviseinfor revisePwd">
+                            <p>修改密码</p>
+                            <div class="revisePwdBtn">修改密码</div>
+                            <div class="inputBox none">
+                                <iframe name="ajaxFrame1" id="ajaxFrame1" style="display: none;"></iframe>
+                                <form target="ajaxFrame1" action="http://39.108.191.122/Portal/User/chanpass">
+                                    <ul>
+                                        <li><input type="password" class="pass" id="pass" placeholder="请输入旧密码" required="required"></li>
+                                        <li><input type="password" class="password" id="password" placeholder="请输入新密码" required="required"></li>
+                                        <li>
+                                            <input type="password" class="password2" id="password1" placeholder="再次输入新密码" required="required">
+                                            <!-- <div class="change">修改</div> -->
+                                            <input type="submit" value="修改" id="chanpassBtn" class="inputBtn">
+                                            <div class="cancel">取消</div>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="reviseinfor reviseTel">
+                            <p>手机绑定</p>
+                            <div class="oldNum" id="oldNum"></div>
+                            <div class="revisePwdBtn">更改绑定</div>
+                            <div class="inputBox none">
+                                <iframe name="ajaxTelFrame2" id="ajaxTelFrame2" style="display: none;"></iframe>
+                                <form target="ajaxTelFrame2" action="http://39.108.191.122/Portal/User/checksmscodes" id="ajaxFrame2From">
+                                    <ul>
+                                        <li>
+                                            <input type="text" class="pass" placeholder="请输入旧手机号" id="oldtel" disabled="disabled" required="required" pattern="^1[345678][0-9]{9}$" maxlength="11">
+                                            <input type="button" class="codeBtn" id="codeTelBtn" value="获取验证码">
+                                            <input type="hidden" id="smsid">
+                                        </li>
+                                        <li>
+                                            <input type="text" class="password" placeholder="请输入新手机号" id="newtel" required="required" pattern="^1[345678][0-9]{9}$" maxlength="11">
+
+                                        </li>
+                                        <li>
+                                            <input type="text" class="password2" placeholder="输入验证码" id="smscode" required="required">
+                                            <input type="submit" class="change" id="changetelBtn" value="修改">
+                                            <div class="cancel">取消</div>
+                                        </li>
+                                    </ul>
+                                </form>
+
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="reviseinfor reviseEmail">
+                            <p>邮箱绑定</p>
+                            <div class="oldNum" id="oldEmail"></div>
+                            <div class="revisePwdBtn">更改绑定</div>
+                            <div class="inputBox none">
+                                <iframe name="ajaxEmial" id="ajaxEmial" style="display: none;"></iframe>
+                                <form target="ajaxEmial" action="http://39.108.191.122/Portal/User/send" id="ajaxEmialFrom">
+                                    <ul>
+                                        <!-- <li><input type="password" class="pass" placeholder="请输入邮箱"></li> -->
+                                        <li>
+                                            <input type="email" class="password" id="emailVal" placeholder="请输入邮箱" required="required">
+                                            <input type="submit" class="codeBtn" id="codeEmailBtn" value="绑定邮箱">
+
+                                        </li>
+                                        <li>
+                                            <p class="goEmail none" id="goEmail">邮件已发送，请去邮箱进行激活</p>
+                                            <!-- <input type="text" class="password2" id="emailCode" placeholder="请输入验证码" required="required">
+                                        <input type="submit" class="change" id="changeEmailBtn" value="修改">
+                                        <div class="cancel">取消</div> -->
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="reviseinfor revisePic">
+                            <p>实名认证</p>
+                            <div class="qualifications" id="qualifications">
+                                <!-- <div class="qualificationsImg">
+                                <img src="./../images/qualificationsBigImg.jpg" alt="">
+                                <div class="closeImg"></div>
+                            </div> -->
+                                <form id="uploadAuthentication" style="float:left" enctype="multipart/form-data">
+                                    <div class="uploadImg"><input type="file" id="uploadImg" name="file" multiple="multiple"><label for="uploadImg"></label></div>
+                                </form>
+
+                            </div>
+                            <div class="warning">*上传企业资质或身份证件（最多上传5张）</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="enterpriseInforBox none">
+                        <div class="reviseinfor reviseUsername">
+                            <p>更改名称</p>
+                            <div class="userName" id="userName"></div>
+                            <div class="revisePwdBtn">更改名称</div>
+                            <div class="inputBox none">
+                                <iframe name="ajaxFrame2" id="ajaxFrame2" style="display: none;"></iframe>
+                                <form target="ajaxFrame2" action="http://39.108.191.122/Portal/User/askusers" id="ajaxFrame2From">
+                                    <ul>
+                                        <li>
+                                            <input type="text" class="changeuserName" id="changeuserName" required="required" value="">
+                                            <!-- <div class="change">修改</div> -->
+                                            <input type="submit" value="修改" id="changeNameBtn" class="inputBtn">
+                                            <div class="cancel">取消</div>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="reviseinfor reviseLogo">
+                            <p>更改logo</p>
+                            <div class="qualifications" id="peoplequalifications">
+                                <div class="qualificationsImg none" id="peoplequalificationsImg">
+                                    <img src="./../images/123.png" alt="">
+                                    <div class="closeImg"></div>
+                                </div>
+                                <form id="uploadForm" enctype="multipart/form-data" style="float: left;">
+                                    <div class="uploadImg" id="peopleUploadImg"><input type="file" id="uploadImgLogo" name="file" multiple="multiple"><label for="uploadImgLogo"></label></div>
+                                </form>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="reviseinfor addAdress" id="addAdress">
+                            <div class="evaryAdress">
+                                <p>地址管理</p>
+                                <div class="detailedAdressBox fl" id="detailedAdressBox">
+
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <iframe name="addAdressgroup" id="" style="display: none;"></iframe>
+                            <form target="addAdressgroup" action="http://39.108.191.122/Portal/User/addadress" id="">
+                                <div class="addAdressgroup" id="addAdressgroup">
+                                    <div class="selects">
+                                        <select name="省" id="province" class="province" required="required">
+                                </select>
+                                    </div>
+                                    <div class="selects">
+                                        <select name="省" id="city" class="city" required="required">
+                                    <option value="">请选择</option>
+                                </select>
+                                    </div>
+                                    <div class="selects">
+                                        <select name="省" id="county" class="county" required="required">
+                                    <option value="">请选择</option>
+                                </select>
+                                    </div>
+                                    <div class="inputBox">
+                                        <ul>
+                                            <li>
+                                                <input type="text" class="changeuserName" id="detailAdressInput" placeholder="请输入详细地址" required="required">
+                                                <input class="change" id="addAdressBtn" type="submit" value="新增">
+                                                <div class="cancelAddress">取消</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="leftMenu" id="leftMenu">
+            <ul>
+                <li class="UserCenter">
+                    <span><img src="./../images/center.png" alt=""></span>
+                    <a href="./index.html">用户中心首页</a>
+                </li>
+                <li class="myIntentionOrder">
+                    <span><img src="./../images/IntentionOrder.png" alt=""></span>
+                    <a href="./my_intention_order.html?type=000&status=3">我的意向单</a>
+                </li>
+                <li class="myOrder">
+                    <span><img src="./../images/order.png" alt=""></span>
+                    <a href="./my_order.html?status=0">我的订单</a>
+                </li>
+                <li class="myShoppingCart">
+                    <span><img src="./../images/ShoppingCart.png" alt=""></span>
+                    <a href="./my_shopping_cart.html">我的购物车</a>
+                </li>
+                <li class="myCollection">
+                    <span><img src="./../images/Collection.png" alt=""></span>
+                    <a href="./my_collection.html?type=000">我的收藏</a>
+                </li>
+                <li class="customerService">
+                    <span><img src="./../images/customer.png" alt=""></span>
+                    <a href="">客户服务</a>
+                </li>
+                <li class="userSettings active">
+                    <span><img src="./../images/setting.png" alt=""></span>
+                    <a href="./user_settings.html">用户设置</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="qualificationsBigImg none" id="qualificationsBigImg">
+        <div class="closeBigImg" id="closeBigImg"><img src="./../images/icon_close.png" alt=""></div>
+        <div class="BigImg" id="BigImg"><img src="./../images/qualificationsBigImg.jpg" alt=""></div>
+    </div>
+
+
     <script src="./../js/jquery.min.js"></script>
     <script src="./../js/md5.js"></script>
     <script src="./../js/common.js"></script>
-    <script src="./../js/ajaxfileupload.js"></script>
     <script>
         var funObj = {
             inits: function() {
                 this.changeSettingtFun();
                 this.reviseFun(); //修改密码
                 this.changeAdress(); //增加地址的三级联动
-                this.changeLogo(); //更改logo上传图片 还不行，跨域问题
+                this.changeLogo(); //更改logo上传图片
                 this.addAdressFun(); //新增地址
 
-                this.changeTelFun(); //暂时的
-                this.changeEmailFun() //暂时的
+
+
             },
             InterfaceObj: {
                 chanpass: "http://39.108.191.122/Portal/User/chanpass", //修改密码
@@ -259,8 +267,10 @@
                 ajaxuploadentlogo: "http://39.108.191.122/Portal/User/ajaxuploadentlogo", //修改头像
                 addadress: "http://39.108.191.122/Portal/User/addadress", //增加地址
                 askphone: "http://39.108.191.122/Portal/User/askphone", //发送手机验证码
-                send: "http://39.108.191.122/Portal/User/send", //发送邮箱验证码
-                checksmscodes: "http://39.108.191.122/Portal/User/checksmscodes" //验证手机号验证码
+                send: "http://39.108.191.122/Portal/User/send", //发送邮箱验证码 
+                checksmscodes: "http://39.108.191.122/Portal/User/checksmscodes", //验证手机号验证码
+                ajaxuploadents: "http://39.108.191.122/Portal/User/ajaxuploadents", //验证手机号验证码
+                delpic: "http://39.108.191.122/Portal/User/delpic" //删除图片
             },
             changeSettingtFun: function() {
                 $("#changeSetting").on("click", "li", function() {
@@ -295,25 +305,77 @@
             },
             changeLogo: function() {
                 $("#uploadImgLogo").on("change", function(res) {
-                    $.ajaxFileUpload({
-                        url: funObj.InterfaceObj.ajaxuploadentlogo, //用于文件上传的服务器端请求地址
-                        secureuri: false, //是否需要安全协议，一般设置为false
-                        fileElementId: 'uploadImgLogo', //文件上传域的ID
-                        dataType: 'json', //返回值类型 一般设置为json
-                        success: function(res, status) { //服务器成功响应处理函数
-                            console.log(res);
-                            var str = "";
+                    $.ajax({
+                        url: funObj.InterfaceObj.ajaxuploadentlogo,
+                        type: 'POST',
+                        cache: false,
+                        dataType: "json",
+                        data: new FormData($('#uploadForm')[0]),
+                        processData: false,
+                        contentType: false,
+                        success: function(res) {
                             if (res.status == 1) {
-                                $("#peoplequalificationsImg").show();
-                                $("#peoplequalificationsImg img").attr("src", res.data.url);
+                                $(".namePic img,#peoplequalificationsImg img").attr({
+                                    "src": res.data.url
+                                });
                                 $("#peopleUploadImg").hide();
+                                $("#peoplequalificationsImg").show();
+                            } else if (res.status == -1) {
+                                alert("上传图片接口返回－1啦");
                             }
-                        },
-                        error: function(data, status, e) { //服务器响应失败处理函数
-                            alert(e)
                         }
                     })
                 });
+
+                $("#uploadImg").on("change", function(res) {
+                    $.ajax({
+                        url: funObj.InterfaceObj.ajaxuploadents,
+                        type: 'POST',
+                        cache: false,
+                        dataType: "json",
+                        data: new FormData($('#uploadAuthentication')[0]),
+                        processData: false,
+                        contentType: false,
+                        success: function(res) {
+                            if (res.status == 1) {
+                                var str = "";
+                                str += '<div class="qualificationsImg">'
+                                str += ' <img src="' + res.data.url + '" alt="">'
+                                str += '<div class="closeImg" data_id=' + res.picid + '></div>'
+                                str += ' </div>'
+                                $("#qualifications").prepend($(str));
+                                if ($("#qualifications .qualificationsImg").length >= 5) {
+                                    $("#uploadAuthentication").hide();
+                                }
+                                $("#qualifications .qualificationsImg img").click(function() {
+                                    var imgSrc = $(this).attr("src");
+                                    $("#qualificationsBigImg").fadeIn(500);
+                                    $("#BigImg img").attr("src", imgSrc);
+                                });
+                                $("#qualifications .closeImg").click(function() { //delpic走一个删除图片的接口
+                                    var that = $(this),
+                                        id = that.attr("data_id");
+                                    common.ajaxFun(funObj.InterfaceObj.delpic, "GET", {
+                                        id: id
+                                    }, function(res) {
+                                        if (res.status == 1) {
+                                            that.parents(".qualificationsImg").remove();
+                                            if ($("#qualifications .qualificationsImg").length < 5) {
+                                                $("#uploadAuthentication").show();
+                                            }
+                                        } else if (res.status == -1) {
+                                            alert("删除图片接口返回－1啦");
+                                        }
+                                    })
+
+                                });
+                            } else if (res.status == -1) {
+                                alert("上传资质认证接口返回－1啦");
+                            }
+                        }
+                    })
+                });
+
                 funObj.logoOperationFun(); //小图片的操作，删除，放大，关闭放大
             },
             logoOperationFun: function() {
@@ -326,6 +388,8 @@
                     $("#qualificationsBigImg").fadeIn(500);
                     $("#BigImg img").attr("src", imgSrc);
                 });
+
+
                 $("#closeBigImg").click(function() {
                     $("#qualificationsBigImg").fadeOut(500);
                 })
@@ -391,8 +455,9 @@
                     $(this).prevAll("div").hide();
                     $(this).next("div.inputBox").show();
                     funObj.chanpassFun(); //修改密码
-                    // funObj.changeTelFun(); //修改电话 暂时注释掉，在init里面引用
+                    funObj.changeTelFun(); //修改电话 
                     funObj.changeNameFun(); //修改用户名
+                    funObj.changeEmailFun() //绑定邮箱
                 });
                 $(".cancel").on("click", function() {
                     $(this).parents("div.inputBox").prevAll("div").show();
@@ -455,33 +520,39 @@
             },
             changeTelFun: function() {
                 $("#codeTelBtn").on("click", function() { //获取短信验证吗askphone
-                    var oldtelVal = $("#oldtel").val(),
-                        reg = /^1[345678][0-9]{9}$/,
-                        askphoneObj = {};
-                    if (oldtelVal == "" || !reg.test(oldtelVal)) {
-                        alert("请填写正确的手机号！")
-                    } else {
-                        askphoneObj.sellphone = oldtelVal;
-                        askphoneObj.type = 2;
-                        common.ajaxFun(funObj.InterfaceObj.askphone, "GET", askphoneObj, function(res) {
-                            if (res.status == 1) {
-                                funObj.setTimeoutFun(60, $("#codeTelBtn"));
-                            } else {
-                                alert("电话接口返回－1了");
-                            }
-                        })
+                    var oldtelVal = $("#oldtel").val();
 
-                    }
+                    common.ajaxFun(funObj.InterfaceObj.askphone, "GET", {}, function(res) {
+                        if (res.status == 1) {
+                            $("#smsid").val(res.data);
+                            $("#oldtel").attr("disabled");
+                            funObj.setTimeoutFun(60, $("#codeTelBtn"));
+                        } else {
+                            alert("电话接口返回－1了");
+                        }
+                    })
+
+
                 });
                 $("#changetelBtn").click(function() {
-                    var checksmscodesObj = {},
+                    var checksmscodesObj = {
+                            smscode: $("#smscode").val(), //短信验证码
+                            smsid: $("#smsid").val(), //后台反过来的验证码
+                            cellphone: $("#newtel").val() //新手机号
+                        },
                         that = $(this);
                     if ($("#oldtel").val() == "" || $("#newtel").val() == "" || $("#smscode").val() == "") {
                         alert("输入框不能为空！")
                     } else {
-                        common.ajaxFun(funObj.InterfaceObj.checksmscodes, "GET", askphoneObj, function(res) {
-                            that.parents("div.inputBox").prevAll("div").show();
-                            that.parents("div.inputBox").hide();
+                        common.ajaxFun(funObj.InterfaceObj.checksmscodes, "GET", checksmscodesObj, function(res) {
+                            if (res.status == 1) {
+                                $("#oldNum").html(checksmscodesObj.cellphone);
+                                that.parents("div.inputBox").prevAll("div").show();
+                                that.parents("div.inputBox").hide();
+                            } else {
+                                alert("修改电话接口返回－1了");
+                            }
+
                         })
                     }
                 })
@@ -492,14 +563,13 @@
                         reg = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/,
                         sendObj = {};
                     console.log(reg.test(emailVal))
-                    if (emailVal == "" || !reg.test(emailVal)) {
-                        alert("请输入正确邮箱！");
-                    } else if (emailVal != "") {
+                    if (reg.test(emailVal) && emailVal != "") {
                         sendObj.emal = emailVal;
                         sendObj.type = 1;
                         common.ajaxFun(funObj.InterfaceObj.send, "GET", sendObj, function(res) {
                             if (res.status == 1) {
                                 funObj.setTimeoutFun(60, $("#codeEmailBtn"));
+                                $("#goEmail").show();
                             } else {
                                 alert("邮箱接口返回－1了");
                             }

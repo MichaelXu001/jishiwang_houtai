@@ -4,7 +4,10 @@ var commonUrl = {
     deladress: "http://39.108.191.122/Portal/User/deladress", //删除地址
     delfavorites: "http://39.108.191.122/Consumer/Favorites/delfavorites", //取消收藏
     confintentions: "http://39.108.191.122/Consumer/Intentions/confintentions", //确认意向单
-    recom: "http://39.108.191.122/Portal/User/recom" //广告位
+    recom: "http://39.108.191.122/Portal/User/recom", //广告位
+    delpic: "http://39.108.191.122/Portal/User/delpic", //删除图片
+    doalipay: "http://39.108.191.122/API/Pay/doalipay" //支付
+
 }
 
 function Common() {
@@ -80,14 +83,89 @@ function Common() {
             $("#quit").click(function() {
                 common.ajaxFun(commonUrl.logout, "GET", {}, function(res) {
                     if (res.status == 1) {
-                        window.location.href = "http://www.jixieshigong.com";
+                        // window.location.href = "http://www.jixieshigong.com";
+                        window.location.href = "/";
                     } else {
                         alert("退出失败")
                     }
                 });
             })
         },
-
+        this.getordersStr = function(res, ele, onlyOne) {
+            var result1 = (onlyOne) ? [res.data[0]] : res.data,
+                str = "";
+            $.each(result1, function(i, v) {
+                str += '<div class="everyList">'
+                str += '<div class="topInfor">'
+                str += '<div class="firstInfor fl">'
+                str += '<div class="times fl">' + v.init_time + '</div>'
+                str += '<div class="orderId fl">订单号：<span>' + v.orderid + '</span></div>'
+                str += '<div class="brandName fl"><a href="' + v.enturl + '"> ' + v.entname + '</a></div>'
+                str += '</div>'
+                str += '<div class="secondInfor fr">'
+                str += '买家：<span>' + v.username + '&nbsp;&nbsp;&nbsp;&nbsp;' + v.userphone + '&nbsp;&nbsp;&nbsp;&nbsp;' + v.address + '</span>'
+                str += ' </div>'
+                str += '</div>'
+                str += '<div class="goodsInfor">'
+                str += '<div class="goodsImg fl"><a href=' + v.pdturl + '><img src="' + v.images_show + '" alt="' + v.name_Chn + '"></a></div>'
+                str += '<div class="goodsName fl">' + v.name_chn + '</div>'
+                str += '<div class="goodsModel fl">' + v.model + '</div>'
+                str += '<div class="goodsNumber fl">' + v.count + '</div>'
+                str += '<div class="goodsPrice fl">¥' + v.price + '</div>'
+                str += '<div class="goodsBtn fl">'
+                if (v.del == 1) {
+                    str += '<span>已付款：' + v.change.p0 + '</span>'
+                } else if (v.del == 2) {
+                    str += '<p onclick="common.doalipayFun(' + v. cartid + ')" >未付款</p>'
+                } else if (v.del == 3) {
+                    str += '<span>未发货</span>'
+                } else if (v.del == 4) {
+                    str += '<span>待接收</span>'
+                } else if (v.del == 5) {
+                    str += '<span>已完成</span>'
+                }
+                str += ' </div>'
+                str += '</div>'
+                str += '<div class="comment">留言：'
+                str += '<span>' + v.comment + '</span>'
+                str += '<div class="stateBox">'
+                str += ' <em>订单状态</em>'
+                str += ' <ul class="state">'
+                if (v.change.p0 != "") {
+                    str += '<li><span>订单生成时间:</span><em>' + v.change.p0 + '</em></li>'
+                }
+                if (v.change.p1 != "") {
+                    str += '<li><span>买家确认时间:</span><em>' + v.change.p1 + '</em></li>'
+                }
+                if (v.change.p2 != "") {
+                    str += '<li><span>发货时间:</span><em>' + v.change.p2 + '</em></li>'
+                }
+                if (v.change.p3 != "") {
+                    str += '<li><span>预计收货时间:</span><em>' + v.change.p3 + '</em></li>'
+                }
+                if (v.change.p4 != "") {
+                    str += '<li><span>收货时间:</span><em>' + v.change.p4 + '</em></li>'
+                }
+                str += '</ul>'
+                str += '</div>'
+                str += '</div>'
+                str += '</div>'
+            })
+            if (onlyOne) {
+                ele.html($(str));
+            } else {
+                ele.html($(str));
+            }
+        },
+        this.doalipayFun = function(id) {
+            common.ajaxFun(commonUrl.doalipay, "GET", {
+                cartid: id
+            }, function(res) {
+                if (res.status == 1) {
+                    alert("付款成功！");
+                }
+            });
+        },
         /**
          * 
          * 
@@ -144,7 +222,7 @@ function Common() {
             }
 
 
-            $("#unconfirmedOrder").on("click", ".goodsBtn p", function() {
+            ele.on("click", ".goodsBtn p", function() {
                 var data_id = $(this).attr("data_id"),
                     that = $(this);
                 common.ajaxFun(commonUrl.confintentions, "GET", {
@@ -217,6 +295,8 @@ function Common() {
                                 common.getFavoritesStr(res);
                             } else if (from == 2) {
                                 common.intentionsStr(res, $("#OrderList"), false);
+                            } else if (from == 3) {
+                                common.getordersStr(res, $("#OrderLists"), false);
                             }
 
                         })
@@ -258,16 +338,6 @@ function Common() {
                     } //delfavorites
                 common.ajaxFun(commonUrl.delfavorites, "GET", cancelFavoritesObj, function(res) {
                     if (res.status == 1) {
-                        // var getFavoritesObj = {
-                        //     type: funObj.urlparameter.type,
-                        //     page: 1,
-                        //     utype: 2, //暂时的，上线的时候就去掉了 1:厂商 2:用户   2显示brandName 1不显示brandName
-
-                        // }
-                        // if (funObj.urlparameter.fenye != "") {
-                        //     getFavoritesObj.page = funObj.urlparameter.fenye;
-                        // }
-                        // // funObj.getFavoritesStrFun(getFavoritesObj);
                         that.parents("div.everyList").remove();
                     } else {
                         alert("取消收藏接口返回－1");
@@ -277,8 +347,54 @@ function Common() {
             })
         }
     this.topNavInfor = function() {
-        common.ajaxFun(commonUrl.askuser, "GET", { type: 2 }, function(res) { //暂时的 上线前把type去掉
+        common.ajaxFun(commonUrl.askuser, "GET", { type: 1 }, function(res) { //暂时的 上线前把type去掉
             if (res.status == 1) {
+                if (res.data.status == 0) {
+                    $("#Authentication").html("未认证");
+                    $("#vip").attr({ "src": "./../images/vip2.png" });
+                } else if (res.data.status == 1) {
+                    $("#Authentication").html("待审核");
+                    $("#vip").attr({ "src": "./../images/vip2.png" });
+                } else if (res.data.status == 2) {
+                    $("#Authentication").html("审核通过");
+                    $("#vip").attr({ "src": "./../images/vip.png" });
+                } else if (res.data.status == 3) {
+                    $("#Authentication").html("审核失败");
+                    $("#vip").attr({ "src": "./../images/vip2.png" });
+                }
+
+                var strurl = "";
+                if (res.data.authentication != "") {
+                    if (res.data.authentication.length >= 5) {
+                        $("#uploadAuthentication").hide();
+                    }
+                    $.each(res.data.authentication, function(i, v) {
+                        strurl += '<div class="qualificationsImg">'
+                        strurl += ' <img src="' + v.url + '" alt="">'
+                        strurl += '<div class="closeImg" data_id=' + i + '></div>'
+                        strurl += ' </div>'
+                    });
+                }
+
+                $("#qualifications").prepend($(strurl));
+
+                $("#qualifications .closeImg").click(function() { //删除图片的接口
+                    var that = $(this),
+                        id = that.attr("data_id");
+                    common.ajaxFun(commonUrl.delpic, "GET", {
+                        id: id
+                    }, function(res) {
+                        if (res.status == 1) {
+                            that.parents(".qualificationsImg").remove();
+                            if ($("#qualifications .qualificationsImg").length < 5) {
+                                $("#uploadAuthentication").show();
+                            }
+                        } else if (res.status == -1) {
+                            alert("删除图片接口返回－1啦");
+                        }
+                    });
+                });
+
                 $(".namePic img,#headerImg").attr({ "src": res.data.header, "alt": res.data.username });
                 $(".name a").html(res.data.username);
                 $("#oldEmail").html(res.data.email);
@@ -289,31 +405,31 @@ function Common() {
                 }
                 if (res.type == 1) {
                     $("#oldNum").html(res.data.tel);
+                    $("#oldtel").val(res.data.tel);
                     $("#addAdress").hide();
                     $(".name a").attr("href", res.data.url);
-                    if (res.data.status == 0) {
-                        $("#Authentication").html("未认证");
-                        $("#vip").attr({ "src": "./../images/vip2.png" });
-                    } else if (res.data.status == 1) {
-                        $("#Authentication").html("待审核");
-                        $("#vip").attr({ "src": "./../images/vip2.png" });
-                    } else if (res.data.status == 2) {
-                        $("#Authentication").html("审核通过");
-                        $("#vip").attr({ "src": "./../images/vip.png" });
-                    } else if (res.data.status == 3) {
-                        $("#Authentication").html("审核失败");
-                        $("#vip").attr({ "src": "./../images/vip2.png" });
-                    }
+                    $("#leftMenu .myShoppingCart").hide();
                 } else if (res.type == 2) {
-                    var str = "";
-                    $.each(res.data.adress, function(i, v) {
-                        str += '<div class="detailedAdress">' +
-                            '<div class="adress">' + v + '</div>' +
-                            '<div class="closeAdress" data_id=' + i + '></div>' +
-                            '</div>'
-                    });
-                    $("#detailedAdressBox").html($(str));
+                    // if (res.data.status == 0) {
+                    //     $("#Authentication").html("未实名");
+                    //     $("#vip").attr({ "src": "./../images/vip2.png" });
+                    // } else if (res.data.status == 1) {
+                    //     $("#Authentication").html("已认证");
+                    //     $("#vip").attr({ "src": "./../images/vip.png" });
+                    // }
+                    if (res.data.adress != "") {
+                        var str = "";
+                        $.each(res.data.adress, function(i, v) {
+                            str += '<div class="detailedAdress">' +
+                                '<div class="adress">' + v + '</div>' +
+                                '<div class="closeAdress" data_id=' + i + '></div>' +
+                                '</div>'
+                        });
+                        $("#detailedAdressBox").html($(str));
+                    }
+
                     $("#oldNum").html(res.data.linkmantelephone);
+                    $("#oldtel").val(res.data.linkmantelephone);
                     $("#detailedAdressBox").on("click", ".closeAdress", function() {
                         var that = $(this),
                             deladressObj = {
@@ -329,13 +445,7 @@ function Common() {
 
                         })
                     });
-                    if (res.data.status == 0) {
-                        $("#Authentication").html("未实名");
-                        $("#vip").attr({ "src": "./../images/vip2.png" });
-                    } else if (res.data.status == 1) {
-                        $("#Authentication").html("已认证");
-                        $("#vip").attr({ "src": "./../images/vip.png" });
-                    }
+
                 }
             } else {
                 alert("获取导航基本信息出错了！")
