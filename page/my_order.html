@@ -16,7 +16,7 @@
     <div class="nav">
         <div class="leftgroup">
             <div class="logo" id="logo">
-                <a href="./index.html"></a>
+                <a href="/"></a>
             </div>
             <div class="telescopic shrink" id="telescopic"><img src="./../images/zd.png" alt=""></div>
         </div>
@@ -35,7 +35,7 @@
             <div class="rightMain" id="rightMain">
                 <div class="projectType" id="projectType">
                     <ul>
-                        <li class="active" data_status="0">全部订单</li>
+                        <li data_status="0">全部订单</li>
                         <li data_status="1">已付款</li>
                         <li data_status="2">待付款</li>
                         <li data_status="3">未发货</li>
@@ -152,13 +152,14 @@
             },
             filterOrderFun: function() {
                 var getordersObj = {};
-                getordersObj.status = 1; //暂时传1或2 funObj.urlparameter.status;
+                getordersObj.status = funObj.urlparameter.status;
                 getordersObj.page = 1;
+                getordersObj.type = 2; //暂时的 1企业 2用户  用户显示未付款按钮，商家显示文字
                 if (funObj.urlparameter.fenye != "") {
                     getordersObj.page = funObj.urlparameter.fenye;
                 };
                 funObj.everyOrderFun(getordersObj);
-
+                $("#projectType li").eq(funObj.urlparameter.status).addClass("active");
                 $("#projectType").on("click", "li", function() {
                     getordersObj.status = $(this).attr("data_status");
                     getordersObj.page = 1;

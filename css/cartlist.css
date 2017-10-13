@@ -694,7 +694,7 @@ footer {
 }
 
 .fix-right .checkbox {
-    margin-left: 20px;
+    /* margin-left: 20px; */
     float: left;
     margin-top: 11px;
     cursor: pointer;
@@ -714,14 +714,14 @@ footer {
 .goods-delall {
     margin-top: 11px;
     float: left;
-    margin-left: 31px;
+    margin-left: 15px;
     cursor: pointer;
 }
 
 .goods-selected {
     margin-top: 11px;
     float: left;
-    margin-left: 50px;
+    margin-left: 20px;
 }
 
 .spanamount1 {

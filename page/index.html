@@ -14,7 +14,7 @@
     <div class="nav">
         <div class="leftgroup">
             <div class="logo" id="logo">
-                <a href="./index.html"></a>
+                <a href="/"></a>
             </div>
             <div class="telescopic shrink" id="telescopic"><img src="./../images/zd2.png" alt=""></div>
         </div>
@@ -102,7 +102,7 @@
                 <div class="myOrders">
                     <div class="tit">
                         <h3 class="fl">我的订单</h3>
-                        <p class="fr"><a href="./my_order.html?status=0">查看全部订单</a></p>
+                        <p class="fr"><a href="./my_order.html?status=1">查看全部订单</a></p>
                     </div>
                     <div class="clear"></div>
                     <div id="myOrders">
@@ -246,6 +246,7 @@
                 }
                 common.ajaxFun(funObj.InterfaceObj.getFavorites, "GET", getFavoritesObj, function(res) {
                     if (res.status == 1) {
+                        console.log(res)
                         common.IndexfavoritesStr(res.data, $("#CollectionBox"), 6);
                     } else if (res.status == -1) {
                         alert("收藏接口出错了！")

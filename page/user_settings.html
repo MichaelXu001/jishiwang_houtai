@@ -14,7 +14,7 @@
     <div class="nav">
         <div class="leftgroup">
             <div class="logo" id="logo">
-                <a href="./index.html"></a>
+                <a href="/"></a>
             </div>
             <div class="telescopic shrink" id="telescopic"><img src="./../images/zd.png" alt=""></div>
         </div>
@@ -187,11 +187,13 @@
                                 </select>
                                     </div>
                                     <div class="inputBox">
-                                        <ul>
+                                        <ul style="margin-top: 10px;">
                                             <li>
-                                                <input type="text" class="changeuserName" id="detailAdressInput" placeholder="请输入详细地址" required="required">
+                                                <input type="text" class="addInput" id="detailAdressInput" placeholder="请输入详细地址" required="required">
+                                                <input type="text" class="addInput" id="detailTelInput" placeholder="请输入电话" required="required" maxlength="11" pattern="^1[345678][0-9]{9}$">
+                                                <input type="text" class="addInput" id="detailNameInput" placeholder="请输入姓名" required="required">
                                                 <input class="change" id="addAdressBtn" type="submit" value="新增">
-                                                <div class="cancelAddress">取消</div>
+                                                <div class="cancelAddress" id="cancelAddress">取消</div>
                                             </li>
                                         </ul>
                                     </div>
@@ -282,7 +284,7 @@
             addAdressFun: function() {
                 $("#addAdressBtn").click(function() {
                     var addAdressObj = {
-                        adress: $("#province").val() + "," + $("#city").val() + "," + $("#county").val() + "," + $("#detailAdressInput").val()
+                        adress: $("#province").val() + " " + $("#city").val() + " " + $("#county").val() + " " + $("#detailAdressInput").val() + " , 电话:" + $("#detailTelInput").val() + " , 姓名:" + $("#detailNameInput").val()
                     };
 
                     if ($("#province").val() != "" && $("#city").val() != "" && $("#county").val() != "" && $("#detailAdressInput").val() != "") {
@@ -290,7 +292,7 @@
                             var str = "";
                             if (res.status == 1) {
                                 str += '<div class="detailedAdress">' +
-                                    '<div class="adress">' + $("#province").val() + '' + $("#city").val() + '' + $("#county").val() + '' + $("#detailAdressInput").val() + '</div>' +
+                                    '<div class="adress">' + $("#province").val() + '' + $("#city").val() + '' + $("#county").val() + '' + $("#detailAdressInput").val() + ' , 电话:' + $("#detailTelInput").val() + ' , 姓名:' + $("#detailNameInput").val() + '</div>' +
                                     '<div class="closeAdress" data_id=' + res.data.nums + '></div>' +
                                     '</div>';
                                 $("#detailedAdressBox").prepend($(str))
@@ -299,7 +301,12 @@
                             }
                         });
                     }
-
+                });
+                $("#cancelAddress").click(function() {
+                    $("#province option:first").attr("selected", true);
+                    $("#city").html('<option value="">请选择</option>');
+                    $("#county").html('<option value="">请选择</option>');
+                    $("#detailAdressInput,#detailTelInput,#detailNameInput").val("")
                 })
 
             },
@@ -403,6 +410,8 @@
                     $("#province").html($(str));
                 });
                 $("#province").on("change", function() {
+                    $("#province option:first").attr("selected", false);
+
                     var provinceID = $("#province").find("option:selected").attr("data_provinceid");
                     common.ajaxFun(funObj.InterfaceObj.linkagetwo, "GET", {
                         type: provinceID

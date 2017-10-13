@@ -40,8 +40,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, .3);
-            z-index: 3;
+            background-color: rgba(0, 0, 0, .5);
+            z-index: 13;
         }
         
         .layer_con {
@@ -101,7 +101,7 @@
     <div class="nav">
         <div class="leftgroup">
             <div class="logo" id="logo">
-                <a href="./index.html"></a>
+                <a href="/"></a>
             </div>
             <div class="telescopic shrink" id="telescopic"><img src="./../images/zd.png" alt=""></div>
         </div>
@@ -131,7 +131,7 @@
                     <div class="list-item">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="" class="allListChecked" onclick="$(&#39;input[type=checkbox]&#39;).prop(&#39;checked&#39;,$(this).prop(&#39;checked&#39;))">
+                                <input type="checkbox" value="" class="allListChecked" onclick="$('input[type=checkbox]').prop('checked',$(this).prop('checked'))">
                                     <span>全选</span>
                             </label>
                         </div>
@@ -150,9 +150,9 @@
                         <div class="fix-right">
                             <div class="checkbox">
                                 <label>
-                                            <input type="checkbox" value="" class="allListChecked" onclick="$(&#39;input[type=checkbox]&#39;).prop(&#39;checked&#39;,$(this).prop(&#39;checked&#39;))">
-                                            <span>全选</span>
-                                        </label>
+                                    <input type="checkbox" value="" class="allListChecked" onclick="$('input[type=checkbox]').prop('checked',$(this).prop('checked'))">
+                                    <span>全选</span>
+                                </label>
                             </div>
                             <div class="goods-delall" onclick="deleteall()">删除选中的商品</div>
                             <div class="goods-selected">已选择<span class="spanamount1" id="spanamount1">0</span>件商品</div>
@@ -185,7 +185,7 @@
                 </li>
                 <li class="myOrder">
                     <span><img src="./../images/order.png" alt=""></span>
-                    <a href="./my_order.html">我的订单</a>
+                    <a href="./my_order.html?status=0">我的订单</a>
                 </li>
                 <li class="myShoppingCart active">
                     <span><img src="./../images/ShoppingCart.png" alt=""></span>
@@ -207,7 +207,56 @@
         </div>
 
     </div>
+    <div class="mask none"></div>
+    <div class="changeAdress none">
+        <div class="changeAdressTit">
+            <div>请选择收货地址</div>
+        </div>
+        <iframe name="order_addAdressgroup" id="" style="display: none;"></iframe>
 
+        <form target="order_addAdressgroup" action="http://39.108.191.122/Portal/User/addadress" id="">
+            <div class="order_addAdressgroup" id="order_addAdressgroup">
+                <div class="order_selects">
+                    <select name="省" id="province" class="order_province" required="required">
+                        </select>
+                </div>
+                <div class="order_selects">
+                    <select name="省" id="city" class="order_city" required="required">
+                            <option value="">请选择</option>
+                        </select>
+                </div>
+                <div class="order_selects">
+                    <select name="省" id="county" class="order_county" required="required">
+                            <option value="">请选择</option>
+                        </select>
+                </div>
+                <div class="clear"></div>
+
+                <div class="order_inputBox">
+                    <ul style="margin-top: 10px;">
+                        <li>
+                            <input type="text" class="order_addInput" id="detailAdressInput" placeholder="请输入详细地址" required="required">
+                            <input type="text" class="order_addInput" id="detailTelInput" placeholder="请输入电话" required="required" maxlength="11" pattern="^1[345678][0-9]{9}$">
+                            <input type="text" class="order_addInput" id="detailNameInput" placeholder="请输入姓名" required="required">
+                            <input class="order_change" id="addAdressBtn" type="submit" value="新增">
+                            <div class="order_cancelAddress" id="cancelAddress">取消</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </form>
+        <ul id="order_adressBox">
+            <!-- <li>
+                    <input type="radio" name="adress" checked>
+                    <p>浙江省 杭州市 市辖区 发的顺丰发的顺丰1号 ，电话：15444444948 ，姓名：高规格</p>
+                    <div class="order_closeAdress"></div>
+                </li> -->
+
+        </ul>
+        <div class="okPay">确定</div>
+        <div class="cancelPay">取消</div>
+    </div>
 
     <script src="./../js/jquery.min.js"></script>
     <script src="./../js/common.js"></script>
@@ -217,7 +266,7 @@
             delcart: "http://39.108.191.122/Consumer/Carts/delcart", //删除购物车
             lately: "http://39.108.191.122/API/Products/lately", //最近浏览
             addcount: "http://39.108.191.122/Consumer/Carts/addcount", //购物车数量加一减一 type（1增加，2减少）
-            doalipay: "http://39.108.191.122/API/Pay/doalipay" //支付
+            doalipay: "http://39.108.191.122/Consumer/Orders/addorder" //支付
         }
         var funObj = {
             inits: function() {
@@ -343,59 +392,53 @@
         function deletegood(id, ths) {
             var that = $(ths);
 
-            console.log(that.parents(".form-goods").length)
-
-            ryzsysconfirm("确认删除此购物车项？", function(rs) {
-                common.ajaxFun(interfaceObj.delcart, "GET", {
-                    cartid: id
-                }, function(res) {
-                    if (res.status == 1) {
-                        if (that.parents(".form-goods").find(".cartlist-item").length == 1) {
-                            that.parents(".form-goods").remove();
-                        } else if (that.parents(".form-goods").find(".cartlist-item").length > 1) {
-                            that.parents(".cartlist-item").remove();
-                        }
-                    } else {
-                        alert("删除接口返回－1啦");
+            common.ajaxFun(interfaceObj.delcart, "GET", {
+                cartid: id
+            }, function(res) {
+                if (res.status == 1) {
+                    if (that.parents(".form-goods").find(".cartlist-item").length == 1) {
+                        that.parents(".form-goods").remove();
+                    } else if (that.parents(".form-goods").find(".cartlist-item").length > 1) {
+                        that.parents(".cartlist-item").remove();
                     }
-                    console.log(res)
-                })
-            });
+                } else {
+                    alert("删除接口返回－1啦");
+                }
+                console.log(res)
+            })
         }
 
 
         function deleteall() { //多个删除
-            ryzsysconfirm("确认删除选中购物车商品？", function(rs) {
-                if (rs) {
-                    ids = "";
-                    $("input[type=checkbox][name^='good']:checked").each(function(i) {
-                        tmp = $(this).val();
-                        ids += tmp.substring(tmp.indexOf('_') + 1) + ",";
 
-                    });
-                    if (ids.length > 0) {
-                        ids = ids.substring(0, ids.length - 1);
-                        common.ajaxFun(interfaceObj.delcart, "GET", {
-                            cartid: ids
-                        }, function(res) {
-                            if (res.status == 1) {
-                                $("input[type=checkbox][name^='good']:checked").each(function(i) {
-                                    if ($(this).parents(".form-goods").find(".cartlist-item").length == 1) {
-                                        $(this).parents(".form-goods").remove();
-                                    } else if ($(this).parents(".form-goods").find(".cartlist-item").length > 1) {
-                                        $(this).parents(".cartlist-item").remove();
-                                    }
-                                });
+            ids = "";
+            $("input[type=checkbox][name^='good']:checked").each(function(i) {
+                tmp = $(this).val();
+                ids += tmp.substring(tmp.indexOf('_') + 1) + ",";
 
-                            } else {
-                                alert("多删接口返回－1啦！");
+            });
+            if (ids.length > 0) {
+                ids = ids.substring(0, ids.length - 1);
+                console.log(ids)
+                common.ajaxFun(interfaceObj.delcart, "GET", {
+                    cartid: ids
+                }, function(res) {
+                    if (res.status == 1) {
+                        $("input[type=checkbox][name^='good']:checked").each(function(i) {
+                            if ($(this).parents(".form-goods").find(".cartlist-item").length == 1) {
+                                $(this).parents(".form-goods").remove();
+                            } else if ($(this).parents(".form-goods").find(".cartlist-item").length > 1) {
+                                $(this).parents(".cartlist-item").remove();
                             }
                         });
+
                     } else {
-                        ryzsysmsg("请选择需要删除商品。");
+                        alert("多删接口返回－1啦！");
                     }
-                }
-            });
+                });
+            } else {
+                ryzsysmsg("请选择需要删除商品。");
+            }
         }
 
         function addamount(id) {
@@ -457,17 +500,8 @@
             if (carList == 0) {
                 layer('请选择商品');
             } else {
-                var ids = "";
-                $("input[type=checkbox][name^='good']:checked").each(function(i) {
-                    ids += tmp.substring(tmp.indexOf('_') + 1) + ",";
-                });
-                common.ajaxFun(interfaceObj.doalipay, "GET", {
-                    cartid: ids
-                }, function(res) {
-                    if (res.status == 1) {
-                        alert("付款成功！");
-                    }
-                });
+
+                $(".mask,.changeAdress").show();
             }
         })
         noAll()
@@ -535,6 +569,168 @@
         $('#dlgryzconfirm').on('hidden.bs.modal', function() {
             if (typeof(g_ryz_confirm_func) === "function") g_ryz_confirm_func(g_ryz_confirm_rs);
         });
+    </script>
+    <script>
+        var adressObj = {
+            askuser: "http://39.108.191.122/Portal/User/askuser", //基本信息
+            linkageone: "http://39.108.191.122/Portal/User/linkageone", //三级联动－省
+            linkagetwo: "http://39.108.191.122/Portal/User/linkagetwo", //三级联动－市
+            linkagethree: "http://39.108.191.122/Portal/User/linkagethree", //三级联动－省 
+            addadress: "http://39.108.191.122/Portal/User/addadress", //增加地址
+            deladress: "http://39.108.191.122/Portal/User/deladress", //删除地址
+            doalipay: "http://39.108.191.122/Consumer/Orders/addorders", //付款
+            adressinit: function() {
+                common.ajaxFun(adressObj.askuser, "GET", {
+                        type: 2
+                    }, function(res) {
+                        if (res.data.adress != "") {
+                            var str = "";
+                            $.each(res.data.adress, function(i, v) {
+                                str += '<li>' +
+                                    '<input type="radio" name="adress" data_id=' + i + '>' +
+                                    '<p>' + v + '</p>' +
+                                    '<div class="order_closeAdress" data_id=' + i + '></div>' +
+                                    '</li>'
+
+                            });
+                            $("#order_adressBox").html($(str));
+
+                            $("#order_adressBox").on("click", ".order_closeAdress", function() {
+                                var that = $(this),
+                                    deladressObj = {
+                                        id: that.attr("data_id")
+                                    }
+                                common.ajaxFun(adressObj.deladress, "GET", deladressObj, function(res) {
+                                    if (res.status == 1) {
+                                        that.parents("li").remove();
+                                    } else if (res.status == -1) {
+                                        alert("删除接口返回－1");
+                                    }
+
+                                })
+                            });
+                        }
+                    }) //暂时的 上线前把type去掉 2个人 1企业
+                this.changeAdress(); //增加地址的三级联动
+                this.addAdressFun(); //新增地址
+                this.buyNowFun(); //立即购买的地址弹框
+
+            },
+            changeAdress: function() {
+                common.ajaxFun(adressObj.linkageone, "GET", {}, function(res) {
+                    var str = "<option value=>请选择</option>";
+                    $.each(res, function(i, v) {
+                        str += "<option data_provinceid=" + v.provinceid + " value=" + v.province + ">" + v.province + "</option>"
+                    })
+                    $("#province").html($(str));
+                });
+                $("#province").on("change", function() {
+                    $("#province option:first").attr("selected", false);
+
+                    var provinceID = $("#province").find("option:selected").attr("data_provinceid");
+                    common.ajaxFun(adressObj.linkagetwo, "GET", {
+                        type: provinceID
+                    }, function(res) {
+
+                        var str = "";
+                        if (res.status == -1) {
+                            str = "<option value=>请选择</option>";
+                            $("#county").html($(str));
+                            $("#city").html($(str));
+                        } else {
+                            $.each(res, function(i, v) {
+                                str += "<option data_cityid=" + v.cityid + " value=" + v.city + ">" + v.city + "</option>"
+                            })
+                            $("#city").html($(str));
+                            common.ajaxFun(adressObj.linkagethree, "GET", {
+                                type: res[0].cityid
+                            }, function(res) {
+                                var str = "";
+                                if (res.status == -1) {
+                                    str = "<option value=>请选择</option>";
+                                } else {
+                                    $.each(res, function(i, v) {
+                                        str += "<option data_areaid=" + v.areaid + " value=" + v.area + ">" + v.area + "</option>"
+                                    })
+                                }
+                                $("#county").html($(str));
+                            });
+                        }
+                    });
+                });
+                $("#city").on("change", function() {
+                    var cityID = $("#city").find("option:selected").attr("data_cityid");
+                    common.ajaxFun(adressObj.linkagethree, "GET", {
+                        type: cityID
+                    }, function(res) {
+                        var str = "";
+                        $.each(res, function(i, v) {
+                            str += "<option data_areaid=" + v.areaid + " value=" + v.area + ">" + v.area + "</optiondata_id>"
+                        })
+                        $("#county").html($(str));
+                    });
+                });
+            },
+            addAdressFun: function() {
+                $("#addAdressBtn").click(function() {
+                    var addAdressObj = {
+                        adress: $("#province").val() + " " + $("#city").val() + " " + $("#county").val() + " " + $("#detailAdressInput").val() + " , 电话:" + $("#detailTelInput").val() + " , 姓名:" + $("#detailNameInput").val()
+                    };
+
+                    if ($("#province").val() != "" && $("#city").val() != "" && $("#county").val() != "" && $("#detailAdressInput").val() != "") {
+                        common.ajaxFun(adressObj.addadress, "GET", addAdressObj, function(res) {
+                            var str = "";
+                            if (res.status == 1) {
+                                str += '<li>' +
+                                    '<input type="radio" name="adress" data_id=' + res.data.nums + '>' +
+                                    '<p>' + $("#province").val() + '' + $("#city").val() + '' + $("#county").val() + '' + $("#detailAdressInput").val() + ' , 电话:' + $("#detailTelInput").val() + ' , 姓名:' + $("#detailNameInput").val() + '</p>' +
+                                    '<div class="order_closeAdress" data_id=' + res.data.nums + '></div>' +
+                                    '</li>'
+
+
+                                $("#order_adressBox").prepend($(str))
+                            } else if (res.status == -1) {
+                                alert("增加接口失败了返回－1")
+                            }
+                        });
+                    }
+                });
+                $("#cancelAddress").click(function() {
+                    $("#province option:first").attr("selected", true);
+                    $("#city").html('<option value="">请选择</option>');
+                    $("#county").html('<option value="">请选择</option>');
+                    $("#detailAdressInput,#detailTelInput,#detailNameInput").val("")
+                })
+
+            },
+            buyNowFun: function() {
+                $("#buyNow").click(function() {
+                    $(".mask,.changeAdress").removeClass("none");
+                });
+                $(".cancelPay").click(function() {
+                    $(".mask,.changeAdress").addClass("none");
+                });
+                $(".okPay").click(function() { //立即购买
+                    $("#data_pid_").val(common.Geturl("data_pid"));
+                    var adresid = $("#order_adressBox input[type='radio']:checked").attr("data_id");
+                    if (adresid == undefined) {
+                        alert("请选择收货地址");
+                    } else if (adresid != undefined) {
+                        var ids = "";
+                        $("input[type=checkbox][name^='good']:checked").each(function(i) {
+                            tmp = $(this).val();
+                            ids += tmp.substring(tmp.indexOf('_') + 1) + ",";
+
+                        });
+                        ids = ids.substring(0, ids.length - 1);
+                        window.location.href = interfaceObj.doalipay + "?cartid=" + ids + "&adresid=" + adresid;
+                    };
+                });
+
+            }
+
+        }
+        adressObj.adressinit();
     </script>
 </body>
 

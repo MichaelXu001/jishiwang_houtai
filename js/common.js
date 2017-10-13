@@ -6,7 +6,7 @@ var commonUrl = {
     confintentions: "http://39.108.191.122/Consumer/Intentions/confintentions", //确认意向单
     recom: "http://39.108.191.122/Portal/User/recom", //广告位
     delpic: "http://39.108.191.122/Portal/User/delpic", //删除图片
-    doalipay: "http://39.108.191.122/API/Pay/doalipay" //支付
+    doalipay: "http://39.108.191.122/Consumer/Orders/addorder" //支付
 
 }
 
@@ -116,7 +116,11 @@ function Common() {
                 if (v.del == 1) {
                     str += '<span>已付款：' + v.change.p0 + '</span>'
                 } else if (v.del == 2) {
-                    str += '<p onclick="common.doalipayFun(' + v. cartid + ')" >未付款</p>'
+                    if (res.type == 2) {
+                        str += '<p onclick="common.doalipayFun(' + v.cartid + ')" >未付款</p>'
+                    } else if (res.type == 1) {
+                        str += '<span>未付款</span>'
+                    }
                 } else if (v.del == 3) {
                     str += '<span>未发货</span>'
                 } else if (v.del == 4) {
@@ -158,13 +162,14 @@ function Common() {
             }
         },
         this.doalipayFun = function(id) {
-            common.ajaxFun(commonUrl.doalipay, "GET", {
-                cartid: id
-            }, function(res) {
-                if (res.status == 1) {
-                    alert("付款成功！");
-                }
-            });
+            window.location.href = commonUrl.doalipay + "?orderid=" + id;
+            // common.ajaxFun(commonUrl.doalipay, "GET", {
+            //     orderid: id
+            // }, function(res) {
+            //     if (res.status == 1) {
+            //         alert("付款成功！");
+            //     }
+            // });
         },
         /**
          * 
@@ -176,6 +181,7 @@ function Common() {
         this.intentionsStr = function(res, ele, onlyOne) {
             var result1 = (onlyOne) ? [res.data[0]] : res.data,
                 str = "";
+            console.log(res)
             $.each(result1, function(i, v) {
                 str += ' <div class="everyList">'
                 str += '<div class="topInfor">'
@@ -347,7 +353,8 @@ function Common() {
             })
         }
     this.topNavInfor = function() {
-        common.ajaxFun(commonUrl.askuser, "GET", { type: 1 }, function(res) { //暂时的 上线前把type去掉
+        common.ajaxFun(commonUrl.askuser, "GET", { type: 2 }, function(res) { //暂时的 上线前把type去掉 2个人 1企业
+            console.log(res)
             if (res.status == 1) {
                 if (res.data.status == 0) {
                     $("#Authentication").html("未认证");
@@ -404,8 +411,8 @@ function Common() {
                     $("#oldEmail").html("没填邮箱");
                 }
                 if (res.type == 1) {
-                    $("#oldNum").html(res.data.tel);
-                    $("#oldtel").val(res.data.tel);
+                    $("#oldNum").html(res.data.linkmantelephone);
+                    $("#oldtel").val(res.data.linkmantelephone);
                     $("#addAdress").hide();
                     $(".name a").attr("href", res.data.url);
                     $("#leftMenu .myShoppingCart").hide();
