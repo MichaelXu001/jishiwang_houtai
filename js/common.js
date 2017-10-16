@@ -117,7 +117,7 @@ function Common() {
                     str += '<span>已付款：' + v.change.p0 + '</span>'
                 } else if (v.del == 2) {
                     if (res.type == 2) {
-                        str += '<p onclick="common.doalipayFun(' + v.cartid + ')" >未付款</p>'
+                        str += '<p onclick="common.doalipayFun(' + v.orderid + ')" >未付款</p>'
                     } else if (res.type == 1) {
                         str += '<span>未付款</span>'
                     }
